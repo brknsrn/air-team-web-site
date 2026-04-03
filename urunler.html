@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Air Team Kompresör Ürünleri - Vidalı, pistonlu, seyyar kompresörler ve basınçlı hava ekipmanları. Tüm ihtiyaçlarınıza özel çözümler.">
+  <title>Ürünler — Air Team Kompresör</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* ======================================
+       PRODUCTS PAGE SPECIFIC STYLES
+       ====================================== */
+
+    /* Page Hero / Breadcrumb */
+    .page-hero {
+      background: var(--dark);
+      padding: 160px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('src/hero-products.jpg') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(26, 26, 26, 0.95) 50%, rgba(26, 26, 26, 0.5));
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.45);
+      transition: color var(--transition);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+    }
+
+    .breadcrumb i {
+      font-size: 0.6rem;
+    }
+
+    .breadcrumb span {
+      color: var(--primary);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1rem;
+      margin-top: 14px;
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    /* Filter Bar */
+    .filter-bar {
+      background: var(--white);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: var(--header-height);
+      z-index: 200;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .filter-bar-inner {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+
+    .filter-bar-inner::-webkit-scrollbar {
+      display: none;
+    }
+
+    .filter-btn {
+      flex-shrink: 0;
+      padding: 16px 22px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--gray);
+      cursor: pointer;
+      border: none;
+      background: none;
+      font-family: var(--font-main);
+      border-bottom: 3px solid transparent;
+      transition: all var(--transition);
+      white-space: nowrap;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+    }
+
+    /* Products main content */
+    .products-page {
+      padding: 80px 0 100px;
+      background: var(--light-gray);
+    }
+
+    /* Category group */
+    .product-category-group {
+      margin-bottom: 70px;
+    }
+
+    .category-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 32px;
+      padding-bottom: 18px;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .category-header h2 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--dark);
+    }
+
+    .category-count {
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+
+    /* Premium product card for the detail view */
+    .product-detail-card {
+      background: var(--white);
+      border-radius: 6px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      transition: all var(--transition);
+      cursor: pointer;
+      margin-bottom: 24px;
+      border: 1px solid var(--border);
+    }
+
+    .product-detail-card:hover {
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+      border-color: rgba(227, 6, 19, 0.2);
+    }
+
+    .product-detail-image {
+      background: var(--light-gray);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .product-detail-image img {
+      max-height: 220px;
+      width: 100%;
+      object-fit: contain;
+      transition: transform 0.5s ease;
+    }
+
+    .product-detail-card:hover .product-detail-image img {
+      transform: scale(1.06);
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 0.65rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 3px;
+    }
+
+    .product-detail-body {
+      padding: 36px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      border-left: 1px solid var(--border);
+    }
+
+    .product-series-tag {
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      color: var(--primary);
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .product-detail-body h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--dark);
+      margin-bottom: 14px;
+      line-height: 1.15;
+    }
+
+    .product-detail-body p {
+      font-size: 0.87rem;
+      color: var(--gray);
+      line-height: 1.75;
+      font-weight: 400;
+      max-width: 560px;
+    }
+
+    /* Spec chips */
+    .spec-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+      margin-bottom: 28px;
+    }
+
+    .spec-chip {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: var(--light-gray);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: var(--dark);
+    }
+
+    .spec-chip i {
+      color: var(--primary);
+      font-size: 0.72rem;
+    }
+
+    .product-detail-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Compact grid cards (for the grid view toggle) */
+    .products-compact-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    /* CTA strip between products */
+    .product-page-cta {
+      background: var(--dark);
+      border-radius: 6px;
+      padding: 36px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      margin: 40px 0;
+      flex-wrap: wrap;
+    }
+
+    .product-page-cta h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+
+    .product-page-cta p {
+      font-size: 0.83rem;
+      color: rgba(255, 255, 255, 0.55);
+      margin-top: 4px;
+    }
+
+    /* View toggle */
+    .view-toggle {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .view-btn {
+      width: 36px;
+      height: 36px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: var(--gray);
+      transition: all var(--transition);
+      background: var(--white);
+      border: none;
+      font-size: 0.85rem;
+    }
+
+    .view-btn.active {
+      background: var(--primary);
+      color: var(--white);
+    }
+
+    .view-btn:hover:not(.active) {
+      background: var(--light-gray);
+      color: var(--dark);
+    }
+
+    .products-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 36px;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .products-count {
+      font-size: 0.82rem;
+      color: var(--gray);
+      font-weight: 600;
+    }
+
+    .products-count span {
+      color: var(--primary);
+      font-weight: 800;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .product-detail-card {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail-image {
+        padding: 30px;
+        min-height: 220px;
+      }
+
+      .product-detail-body {
+        padding: 24px;
+        border-left: none;
+        border-top: 1px solid var(--border);
+      }
+
+      .products-compact-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .products-compact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .product-detail-body h3 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menüyü kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <ul>
+      <li><a href="urunler.html" style="color:var(--primary); text-transform: uppercase;">Ürünler</a></li>
+      <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Air Team Ana Sayfa">
+          <div class="logo-text">AIR<span>TEAM</span></div>
+        </a>
+        <nav class="main-nav" aria-label="Ana navigasyon">
+          <ul>
+            <li>
+              <a href="urunler.html" style="color:var(--primary); text-transform: uppercase;">Ürünler</a>
+              <ul class="dropdown">
+                <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+                <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+                <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+              </ul>
+            </li>
+            <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <!-- <a href="#" aria-label="Arama"><i class="fa-solid fa-magnifying-glass"></i></a> -->
+          <div class="lang-select"><i class="fa-solid fa-globe"></i><span>TR</span></div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Ana Sayfa</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Ürünler</span>
+          </nav>
+          <h1>Ürün Kataloğu</h1>
+          <p>Vidalı, pistonlu ve seyyar kompresörlerden geniş basınçlı hava ekipmanlarına kadar her ihtiyaca özel
+            endüstriyel çözümler.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Filter Bar -->
+    <div class="filter-bar" role="navigation" aria-label="Ürün filtresi">
+      <div class="container">
+        <div class="filter-bar-inner">
+          <button class="filter-btn active" data-filter="all">Tümü</button>
+          <button class="filter-btn" data-filter="vidali">Vidalı Kompresörler</button>
+          <button class="filter-btn" data-filter="pistonlu">Pistonlu Kompresörler</button>
+          <button class="filter-btn" data-filter="seyyar">Seyyar Kompresörler</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Products Main -->
+    <section class="products-page">
+      <div class="container">
+        <!-- Toolbar -->
+        <div class="products-toolbar">
+          <p class="products-count"><span id="productCount">6</span> ürün listeleniyor</p>
+          <div style="display:flex; align-items:center; gap: 12px;">
+            <div class="view-toggle" role="group" aria-label="Görünüm seçimi">
+              <button class="view-btn active" id="viewList" title="Liste görünümü" aria-pressed="true">
+                <i class="fa-solid fa-list"></i>
+              </button>
+              <button class="view-btn" id="viewGrid" title="Grid görünümü" aria-pressed="false">
+                <i class="fa-solid fa-grip"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Vidalı Kompresörler Group -->
+        <div class="product-category-group" data-category="vidali" id="groupVidali">
+          <div class="category-header">
+            <h2>Vidalı Kompresörler</h2>
+            <span class="category-count">4 Seri</span>
+          </div>
+
+          <!-- INVERSYS PLUS -->
+          <div class="product-detail-card reveal" data-filter="vidali">
+            <div class="product-detail-image">
+              <span class="product-badge">YENİ NESİL</span>
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png"
+                alt="INVERSYS PLUS Serisi Vidalı Kompresör" loading="lazy" onerror="this.src='src/fallback-1.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Vidalı Kompresör</p>
+              <h3>INVERSYS PLUS Serisi</h3>
+              <p>Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde <strong>%35'e varan enerji
+                  tasarrufu</strong>. Yağ enjekteli vidalı kompresör. 5,5 kW – 315 kW arasındaki tüm gereksinimleri
+                karşılar.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> 5,5 kW – 315 kW</div>
+                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> Değişken Hızlı (VSD)</div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> Yağ Enjekteli</div>
+                <div class="spec-chip"><i class="fa-solid fa-leaf"></i> %35 Enerji Tasarrufu</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/inversys-plus-serisi/" target="_blank"
+                  class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- TIDY -->
+          <div class="product-detail-card reveal" data-filter="vidali">
+            <div class="product-detail-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png" alt="TIDY Serisi Vidalı Kompresör"
+                loading="lazy" onerror="this.src='src/fallback-2.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Vidalı Kompresör</p>
+              <h3>TIDY Serisi</h3>
+              <p>Basit, güvenilir ve kompakt tasarım. Bakımı kolay ve uzun ömürlü. Yüksek performanslı çalışmaları
+                sayesinde <strong>küçük ve orta ölçekli işletmelerde</strong> güvenle kullanılmaktadır. 2,2 kW – 37 kW
+                arasındaki tüm gereksinimleri karşılar.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> 2,2 kW – 37 kW</div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> Yağ Enjekteli</div>
+                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> Kolay Bakım</div>
+                <div class="spec-chip"><i class="fa-solid fa-building"></i> KOBİ için İdeal</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/tidy-serisi/" target="_blank" class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- DVK Direk Akuple -->
+          <div class="product-detail-card reveal" data-filter="vidali">
+            <div class="product-detail-image">
+              <span class="product-badge">YÜK. PERFORMANS</span>
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png" alt="DVK Direk Akuple Serisi"
+                loading="lazy" onerror="this.src='src/fallback-1.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Vidalı Kompresör</p>
+              <h3>DVK Direk Akuple Serisi</h3>
+              <p>Yüksek performans, güvenilirlik ve dayanıklılık sunar. <strong>Direkt akuple güç aktarım
+                  sistemi</strong> ile enerji kaybını minimize eder. 22 kW ve 315 kW arasındaki tüm gereksinimleri
+                karşılar.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> 22 kW – 315 kW</div>
+                <div class="spec-chip"><i class="fa-solid fa-link"></i> Direk Akuple</div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> Yağ Enjekteli</div>
+                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> Yüksek Dayanıklılık</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/dvk-direk-akuple-serisi/" target="_blank"
+                  class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- DVK Serisi -->
+          <div class="product-detail-card reveal" data-filter="vidali">
+            <div class="product-detail-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png"
+                alt="DVK Serisi Vidalı Kompresör" loading="lazy" onerror="this.src='src/fallback-3.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Vidalı Kompresör</p>
+              <h3>DVK Serisi</h3>
+              <p>Basit, güvenilir ve sağlam tasarım. Bakımı kolay ve uzun ömürlü. 45 kW – 160 kW arasındaki tüm
+                gereksinimleri karşılar. <strong>Sahada kullanılan on binlerce kompresör</strong> tarafından kanıtlanmış
+                tasarım ve güvenilirlik.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> 45 kW – 160 kW</div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> Yağ Enjekteli</div>
+                <div class="spec-chip"><i class="fa-solid fa-star"></i> Kanıtlanmış Tasarım</div>
+                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> Uzun Bakım Aralığı</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/dvk-serisi/" target="_blank" class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Strip -->
+        <div class="product-page-cta reveal">
+          <div>
+            <h4>Hangi Kompresör Size Uygun?</h4>
+            <p>Teknik ekibimiz doğru ürünü seçmenize yardımcı olsun.</p>
+          </div>
+          <div style="display:flex;gap:12px;flex-wrap:wrap;">
+            <a href="tel:02625032526" class="btn btn-primary">
+              <i class="fa-solid fa-phone"></i> 0262 503 25 26
+            </a>
+            <a href="mailto:info@airteam.com.tr" class="btn"
+              style="background:rgba(255,255,255,0.08);color:var(--white);border:1px solid rgba(255,255,255,0.2);">
+              <i class="fa-solid fa-envelope"></i> info@airteam.com.tr
+            </a>
+          </div>
+        </div>
+
+        <!-- Seyyar Kompresörler Group -->
+        <div class="product-category-group" data-category="seyyar" id="groupSeyyar">
+          <div class="category-header">
+            <h2>Seyyar Kompresörler</h2>
+            <span class="category-count">1 Seri</span>
+          </div>
+
+          <!-- PORTAIR -->
+          <div class="product-detail-card reveal" data-filter="seyyar">
+            <div class="product-detail-image">
+              <span class="product-badge">TAŞINABILIR</span>
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u5-1024x806.png"
+                alt="PORTAIR Seyyar Kompresör Serisi" loading="lazy" onerror="this.src='src/fallback-1.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Seyyar Kompresör</p>
+              <h3>PORTAIR Serisi</h3>
+              <p>PORTAIR serisi seyyar kompresörler <strong>inşaat, maden ve gemi onarım sektörleri</strong> için
+                kullanımı ideal kompresörlerdir. Yüksek dayanımlı ve yüksek verimli vida blokları sayesinde uzun bakım
+                aralıkları, yüksek performans ve hava debisi sunar.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-truck"></i> Taşınabilir</div>
+                <div class="spec-chip"><i class="fa-solid fa-hard-hat"></i> İnşaat / Maden</div>
+                <div class="spec-chip"><i class="fa-solid fa-ship"></i> Gemi Onarım</div>
+                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> Yüksek Hava Debisi</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/portair-serisi/" target="_blank" class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pistonlu Kompresörler Group -->
+        <div class="product-category-group" data-category="pistonlu" id="groupPistonlu">
+          <div class="category-header">
+            <h2>Pistonlu Kompresörler</h2>
+            <span class="category-count">1 Seri</span>
+          </div>
+
+          <!-- Tek ve Çift Kademeli -->
+          <div class="product-detail-card reveal" data-filter="pistonlu">
+            <div class="product-detail-image">
+              <span class="product-badge">KLASİK</span>
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png"
+                alt="Tek ve Çift Kademeli Pistonlu Kompresör" loading="lazy" onerror="this.src='src/fallback-4.jpg'">
+            </div>
+            <div class="product-detail-body">
+              <p class="product-series-tag">Pistonlu Kompresör</p>
+              <h3>Tek ve Çift Kademeli Pistonlu Seri</h3>
+              <p>Kullanımı kolay, güvenli, uzun ömürlü ve dayanıklı pistonlu kompresörler <strong>küçük işletmeler,
+                  atölyeler ve endüstri uygulamaları</strong> için idealdir. 1969 yılından bu yana üretilen bu seri
+                DALGAKIRAN'a duyulan güvenin temelidir.</p>
+              <div class="spec-chips">
+                <div class="spec-chip"><i class="fa-solid fa-cog"></i> 1969'dan Bu Yana</div>
+                <div class="spec-chip"><i class="fa-solid fa-store"></i> Atölye / KOBİ</div>
+                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> Uzun Ömürlü</div>
+                <div class="spec-chip"><i class="fa-solid fa-layers"></i> Tek & Çift Kademeli</div>
+              </div>
+              <div class="product-detail-actions">
+                <a href="http://www.aircomp.com.tr/urunler/tek-ve-cift-kademeli-pistonlu-seri/" target="_blank"
+                  class="btn btn-primary">
+                  <i class="fa-solid fa-circle-info"></i> Detaylı İncele
+                </a>
+                <a href="#" class="btn btn-outline-dark">
+                  <i class="fa-solid fa-envelope"></i> Teklif Al
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA Section (same as homepage) -->
+    <section class="cta-section" aria-label="İletişime geç">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-text reveal">
+            <h2>Projeniz İçin<br>Doğru Çözümü Bulalım</h2>
+            <p>Uzman ekibimiz, ihtiyaçlarınıza en uygun kompresör sistemini seçmenize yardımcı olsun.</p>
+          </div>
+          <div style="display:flex; gap:16px; flex-wrap: wrap;" class="reveal">
+            <a href="tel:02625032526" class="btn"
+              style="background:var(--white); color: var(--primary); font-weight:800;">
+              <i class="fa-solid fa-phone"></i>
+              0262 503 25 26
+            </a>
+            <a href="mailto:info@airteam.com.tr" class="btn"
+              style="background: rgba(255,255,255,0.18); color: var(--white); border: 2px solid rgba(255,255,255,0.5);">
+              <i class="fa-solid fa-envelope"></i>
+              info@airteam.com.tr
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Alt bilgi">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">AIR<span>TEAM</span></div>
+          <p>Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına yüksek performanslı
+            kesintisiz hava çözümleri ile 7/24 orijinal yedek parça ve teknik destek sunuyoruz.</p>
+          <div class="social-links" aria-label="Sosyal medya bağlantıları">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ürünler</h5>
+          <ul>
+            <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+            <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+            <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+            <li><a href="urunler.html">Tüm Ürünler</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Kurumsal</h5>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Air Team Kompresör A.Ş. Tüm hakları saklıdır.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Çerez Politikası</a>
+          <a href="#">KVKK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+  <script>
+    /* Products Page Specific JS */
+    (() => {
+      /* Filter functionality */
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const allCards = document.querySelectorAll('.product-detail-card');
+      const productCount = document.getElementById('productCount');
+      const groups = {
+        all: ['groupVidali', 'groupSeyyar', 'groupPistonlu'],
+        vidali: ['groupVidali'],
+        pistonlu: ['groupPistonlu'],
+        seyyar: ['groupSeyyar'],
+      };
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          filterBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          const f = btn.dataset.filter;
+
+          // Show/hide groups
+          Object.keys(groups).forEach(key => {
+            const showIds = groups[f] || [];
+            groups[key].forEach(id => {
+              const el = document.getElementById(id);
+              if (el) el.style.display = (f === 'all' || groups[f].includes(id)) ? '' : 'none';
+            });
+          });
+
+          // Count visible cards
+          let count = 0;
+          allCards.forEach(c => {
+            const show = f === 'all' || c.dataset.filter === f;
+            c.style.display = show ? '' : 'none';
+            if (show) count++;
+          });
+          productCount.textContent = count;
+        });
+      });
+
+      /* View toggle (list ↔ grid) */
+      const viewList = document.getElementById('viewList');
+      const viewGrid = document.getElementById('viewGrid');
+
+      viewList?.addEventListener('click', () => {
+        viewList.classList.add('active');
+        viewGrid.classList.remove('active');
+        viewList.setAttribute('aria-pressed', 'true');
+        viewGrid.setAttribute('aria-pressed', 'false');
+        allCards.forEach(c => {
+          c.style.gridTemplateColumns = '';
+          c.style.display = c.style.display; // preserve filter
+        });
+      });
+
+      viewGrid?.addEventListener('click', () => {
+        viewGrid.classList.add('active');
+        viewList.classList.remove('active');
+        viewGrid.setAttribute('aria-pressed', 'true');
+        viewList.setAttribute('aria-pressed', 'false');
+        // Switch to compact grid look
+        document.querySelectorAll('.product-category-group').forEach(g => {
+          // Re-flow cards in a grid
+          g.querySelector('.product-detail-card')?.parentElement.style.setProperty('display', 'grid');
+        });
+      });
+
+      // Handle query parameter for deep linking
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialFilter = urlParams.get('filter');
+      if (initialFilter) {
+        const btnToSelect = document.querySelector(`.filter-btn[data-filter="${initialFilter}"]`);
+        if (btnToSelect) {
+          btnToSelect.click();
+        } else {
+          // If the button doesn't exist yet but user clicked anyway (e.g. gaz or ekipman), we can fake it
+          filterBtns.forEach(b => b.classList.remove('active'));
+          Object.keys(groups).forEach(key => {
+            groups[key].forEach(id => {
+              const el = document.getElementById(id);
+              if (el) el.style.display = 'none'; // hide everything mapped
+            });
+          });
+          productCount.textContent = 0;
+        }
+      }
+    })();
+  </script>
+</body>
+
+</html>

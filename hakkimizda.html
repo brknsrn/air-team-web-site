@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="AirTeam Kompresör - Hakkımızda. Gebze ve Kocaeli bölgesinde uzman kompresör bayisi ve servis hizmetleri.">
+  <title>Hakkımızda — AirTeam Kompresör</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Hakkımızda Sayfasına Özel Stiller */
+    .page-hero {
+      background: var(--dark);
+      padding: 160px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: url('src/hero-about.jpg') center/cover no-repeat;
+      opacity: 0.15;
+    }
+
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(26, 26, 26, 0.95) 50%, rgba(26, 26, 26, 0.5));
+    }
+
+    .page-hero-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      color: rgba(255, 255, 255, 0.45);
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+
+    .breadcrumb a {
+      color: rgba(255, 255, 255, 0.45);
+      transition: color var(--transition);
+    }
+
+    .breadcrumb a:hover {
+      color: var(--primary);
+    }
+
+    .breadcrumb i {
+      font-size: 0.6rem;
+    }
+
+    .breadcrumb span {
+      color: var(--primary);
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 900;
+      color: var(--white);
+      text-transform: uppercase;
+      line-height: 1.1;
+    }
+
+    .page-hero p {
+      color: rgba(255, 255, 255, 0.65);
+      font-size: 1rem;
+      margin-top: 14px;
+      max-width: 520px;
+      line-height: 1.75;
+    }
+
+    .about-content-section {
+      padding: 100px 0;
+      background: var(--white);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .about-text h2 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 24px;
+      line-height: 1.2;
+    }
+
+    .about-text p {
+      color: var(--gray);
+      line-height: 1.8;
+      margin-bottom: 20px;
+      font-size: 1.05rem;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image img {
+      width: 100%;
+      border-radius: 8px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .about-image::after {
+      content: '';
+      position: absolute;
+      bottom: -20px;
+      right: -20px;
+      width: 100%;
+      height: 100%;
+      border: 4px solid var(--primary);
+      border-radius: 8px;
+      z-index: -1;
+    }
+
+    .contact-info-boxes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
+    }
+
+    .contact-box {
+      background: var(--light-gray);
+      padding: 30px;
+      border-radius: 8px;
+      text-align: center;
+      transition: transform var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .contact-box:hover {
+      transform: translateY(-5px);
+      border-color: var(--primary);
+    }
+
+    .contact-box i {
+      font-size: 2.5rem;
+      color: var(--primary);
+      margin-bottom: 16px;
+    }
+
+    .contact-box h3 {
+      font-size: 1.2rem;
+      color: var(--dark);
+      margin-bottom: 12px;
+    }
+
+    .contact-box p,
+    .contact-box a {
+      color: var(--gray);
+      font-size: 0.95rem;
+      text-decoration: none;
+    }
+
+    .contact-box a:hover {
+      color: var(--primary);
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menüyü kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <ul>
+      <li><a href="urunler.html" style="text-transform: uppercase;">Ürünler</a></li>
+      <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+    </ul>
+  </nav>
+
+  <!-- Header -->
+  <header class="site-header scrolled" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <a href="index.html" class="logo" aria-label="Dalgakıran Ana Sayfa">
+          <div class="logo-text">DALGA<span>KIRAN</span></div>
+        </a>
+        <nav class="main-nav" aria-label="Ana navigasyon">
+          <ul>
+            <li>
+              <a href="urunler.html" style="text-transform: uppercase;">Ürünler</a>
+              <ul class="dropdown">
+                <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+                <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+                <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+              </ul>
+            </li>
+            <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+          </ul>
+        </nav>
+        <div class="header-actions">
+          <!-- <a href="#" aria-label="Arama"><i class="fa-solid fa-magnifying-glass"></i></a> -->
+          <div class="lang-select"><i class="fa-solid fa-globe"></i><span>TR</span></div>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero -->
+    <section class="page-hero">
+      <div class="container">
+        <div class="page-hero-inner">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Ana Sayfa</a>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Kurumsal</span>
+            <i class="fa-solid fa-chevron-right"></i>
+            <span>Hakkımızda</span>
+          </nav>
+          <h1>Hakkımızda</h1>
+          <p>Yılların tecrübesiyle, endüstriyel kompresör ihtiyaçlarınızda güvenilir çözüm ortağınız.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-content-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text reveal">
+            <h2>Başarıya Giden Yolda Güçlü Çözüm Ortağınız</h2>
+            <p><strong>AirTeam Kompresör</strong> olarak, Gebze ve Kocaeli başta olmak üzere Türkiye'nin dört bir
+              yanındaki sanayi kuruluşlarına, atölyelere ve fabrikalara yüksek kaliteli basınçlı hava çözümleri
+              sunuyoruz.</p>
+            <p>Dalgakıran Kompresör'ün yetkili bayisi ve servis noktası olarak, vidalı ve pistonlu kompresörlerin
+              satışı, orijinal yedek parça temini, periyodik bakım ve 7/24 teknik servis hizmetlerini uzman kadromuzla
+              gerçekleştiriyoruz.</p>
+            <p>Amacımız, müşterilerimizin işletmelerinde kesintisiz üretim yapabilmeleri için en verimli ve enerji
+              tasarruflu kompresör sistemlerini kurmak, satış sonrası desteğimizle her zaman yanlarında olmaktır.</p>
+          </div>
+          <div class="about-image reveal">
+            <img src="src/service-team.jpg" alt="Kompresör Servis Ekibi">
+          </div>
+        </div>
+
+        <div class="contact-info-boxes reveal" style="margin-top: 80px;">
+          <div class="contact-box">
+            <i class="fa-solid fa-phone-volume"></i>
+            <h3>Telefon</h3>
+            <p><a href="tel:02625032526">0262 503 25 26</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            <h3>E-Posta</h3>
+            <p><a href="mailto:info@airteam.com.tr">info@airteam.com.tr</a></p>
+          </div>
+          <div class="contact-box">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <h3>Adres</h3>
+            <p>Yenikent mahallesi Mutlukent bulvarı no 7 kapı no 2 <br> Gebze / Kocaeli</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" aria-label="İletişime geç">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-text reveal">
+            <h2>Hemen Bize Ulaşın</h2>
+            <p>Servis talepleriniz, yedek parça ihtiyaçlarınız ve kompresör alımlarınız için uzman ekibimizle görüşün.
+            </p>
+          </div>
+          <div style="display:flex; gap:16px; flex-wrap: wrap;" class="reveal">
+            <a href="tel:02625032526" class="btn"
+              style="background:var(--white); color: var(--primary); font-weight:800;">
+              <i class="fa-solid fa-phone"></i>
+              0262 503 25 26
+            </a>
+            <a href="mailto:info@airteam.com.tr" class="btn"
+              style="background: rgba(255,255,255,0.18); color: var(--white); border: 2px solid rgba(255,255,255,0.5);">
+              <i class="fa-solid fa-envelope"></i>
+              info@airteam.com.tr
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" aria-label="Alt bilgi">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">AIR<span>TEAM</span></div>
+          <p>Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına yüksek performanslı
+            kesintisiz hava çözümleri ile 7/24 orijinal yedek parça ve teknik destek sunuyoruz.</p>
+          <div class="social-links" aria-label="Sosyal medya bağlantıları">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ürünler</h5>
+          <ul>
+            <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+            <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+            <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+            <li><a href="urunler.html">Tüm Ürünler</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Kurumsal</h5>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Air Team Kompresör A.Ş. Tüm hakları saklıdır.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Çerez Politikası</a>
+          <a href="#">KVKK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

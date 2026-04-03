@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Air Team Kompresör - Gebze ve Kocaeli bölgesinde uzman kompresör bayisi ve servis hizmetleri.">
+  <title>Air Team Kompresör</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ==============================
+       MOBILE NAV
+       ============================== -->
+  <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+  <nav class="mobile-nav" id="mobileNav">
+    <button class="mobile-nav-close" id="mobileNavClose" aria-label="Menüyü kapat">
+      <i class="fa-solid fa-xmark"></i>
+    </button>
+    <ul>
+      <li><a href="urunler.html" style="text-transform: uppercase;">Ürünler</a></li>
+      <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+    </ul>
+  </nav>
+
+  <!-- ==============================
+       HEADER
+       ============================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#" class="logo" aria-label="Air Team Ana Sayfa">
+          <div class="logo-text">AIR<span>TEAM</span></div>
+        </a>
+
+        <!-- Navigation -->
+        <nav class="main-nav" aria-label="Ana navigasyon">
+          <ul>
+            <li>
+              <a href="urunler.html" style="text-transform: uppercase;">Ürünler</a>
+              <ul class="dropdown">
+                <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+                <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+                <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+              </ul>
+            </li>
+            <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+          </ul>
+        </nav>
+
+        <!-- Actions -->
+        <div class="header-actions">
+          <!-- <a href="#" aria-label="Arama"><i class="fa-solid fa-magnifying-glass"></i></a> -->
+          <div class="lang-select" aria-label="Dil seçimi">
+            <i class="fa-solid fa-globe"></i>
+            <span>TR</span>
+          </div>
+        </div>
+
+        <!-- Hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==============================
+         HERO SLIDER
+         ============================== -->
+    <section class="hero" aria-label="Ana slider">
+      <div class="hero-slider" id="heroSlider">
+
+        <!-- Slide 1 -->
+        <div class="hero-slide active">
+          <img class="hero-bg" src="src/hero-1.jpg" alt="EAGLE Serisi Vidalı Kompresör" loading="eager">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <div class="hero-text">
+                <p class="hero-tag">Yeni Nesil Kompresör Teknolojisi</p>
+                <h1 class="hero-title">EAGLE Serisi<br>Vidalı Kompresörler</h1>
+                <p class="hero-desc">Düşük enerji tüketimi, yüksek verimlilik. En seçici endüstriyel kullanımlar için
+                  üretilmiş kompresör çözümleri.</p>
+                <div class="hero-actions">
+                  <a href="urunler.html" class="btn btn-primary">
+                    <i class="fa-solid fa-bolt"></i>
+                    Ürünleri Keşfet
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="hero-slide">
+          <img class="hero-bg" src="src/hero-2.jpg" alt="Endüstriyel Çözümler" loading="lazy">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <div class="hero-text">
+                <p class="hero-tag">130+ Ülkede Güvenilir Çözüm Ortağı</p>
+                <h1 class="hero-title">Global Ölçekte<br>Endüstriyel Güç</h1>
+                <p class="hero-desc">1952'den bu yana dünya genelinde 130'dan fazla ülkede faaliyet göstererek global
+                  standartlarda hizmet sunuyoruz.</p>
+                <div class="hero-actions">
+                  <a href="hakkimizda.html" class="btn btn-primary">
+                    <i class="fa-solid fa-earth-europe"></i>
+                    Hakkımızda
+                  </a>
+                  <a href="urunler.html" class="btn btn-outline">
+                    <i class="fa-solid fa-file-pdf"></i>
+                    Katalog
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="hero-slide">
+          <img class="hero-bg" src="src/hero-3.jpg" alt="Servis ve Destek" loading="lazy">
+          <div class="hero-overlay"></div>
+          <div class="hero-content">
+            <div class="container">
+              <div class="hero-text">
+                <p class="hero-tag">7/24 Teknik Destek</p>
+                <h1 class="hero-title">Her Zaman<br>Yanınızdayız</h1>
+                <p class="hero-desc">Satış sonrası teknik destek, yedek parça ve servis hizmetleriyle makinenizin
+                  verimliliğini maksimumda tutuyoruz.</p>
+                <div class="hero-actions">
+                  <a href="#services" class="btn btn-primary">
+                    <i class="fa-solid fa-headset"></i>
+                    Servis Ağı
+                  </a>
+                  <a href="#iletisim" class="btn btn-outline">
+                    <i class="fa-solid fa-phone"></i>
+                    Bize Ulaşın
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <div class="slider-arrows">
+        <button class="slider-arrow" id="prevSlide" aria-label="Önceki slayt">
+          <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="slider-arrow" id="nextSlide" aria-label="Sonraki slayt">
+          <i class="fa-solid fa-chevron-right"></i>
+        </button>
+      </div>
+
+      <!-- Dots -->
+      <div class="slider-controls" role="group" aria-label="Slider navigasyon noktaları">
+        <button class="slider-dot active" data-slide="0" aria-label="Slayt 1"></button>
+        <button class="slider-dot" data-slide="1" aria-label="Slayt 2"></button>
+        <button class="slider-dot" data-slide="2" aria-label="Slayt 3"></button>
+      </div>
+    </section>
+
+    <!-- ==============================
+         STATS SECTION
+         ============================== -->
+    <section class="stats-section" aria-label="İstatistikler">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal">
+            <div class="stat-number">
+              <span class="count-up" data-target="130">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Ülke</p>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-number">
+              <span class="count-up" data-target="72">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Yıllık Deneyim</p>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-number">
+              <span class="count-up" data-target="500">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Bayi ve Servis</p>
+          </div>
+          <div class="stat-item reveal">
+            <div class="stat-number">
+              <span class="count-up" data-target="50000">0</span>
+              <span class="stat-suffix">+</span>
+            </div>
+            <p class="stat-label">Mutlu Müşteri</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         INTRO / ABOUT SECTION
+         ============================== -->
+    <section class="intro-section" id="about" aria-label="Hakkımızda">
+      <div class="container">
+        <div class="intro-grid">
+          <div class="intro-image-wrap reveal">
+            <img src="src/stats-bg.jpg" alt="Dalgakıran fabrika tesisi" loading="lazy">
+            <div class="intro-image-accent"></div>
+          </div>
+          <div class="intro-content reveal">
+            <p class="section-tag">Biz Kimiz?</p>
+            <h2 class="section-title">Güvenilir<br>Çözüm Ortağınız</h2>
+            <p class="section-subtitle">Air Team Kompresör olarak, Dalgakıran Kompresör'ün yetkili bayisi ve servis
+              noktası unvanıyla sanayi kuruluşlarına, atölyelere ve fabrikalara yüksek kaliteli basınçlı hava çözümleri
+              sunuyoruz.</p>
+            <p class="section-subtitle" style="margin-top:16px;">Müşterilerimizin kesintisiz üretim yapabilmeleri için
+              uzman kadromuzla; satış, orijinal yedek parça temini, periyodik bakım ve 7/24 teknik destek hizmetlerini
+              bir arada sağlıyoruz. Verimlilik ve müşteri memnuniyetini en üst düzeyde tutuyoruz.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         PRODUCTS SECTION
+         ============================== -->
+    <section class="products-section" id="products" aria-label="Ürünler">
+      <div class="container">
+        <div class="products-header">
+          <div>
+            <p class="section-tag">Ürün Kataloğu</p>
+            <h2 class="section-title">Endüstriyel Çözümler</h2>
+          </div>
+          <a href="urunler.html" class="btn btn-outline-dark">Tüm Ürünler <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <!-- Tabs -->
+        <div class="product-tabs" role="tablist" aria-label="Ürün kategorileri">
+          <button class="tab-btn active" role="tab" aria-selected="true" data-tab="vidali" id="tab-vidali">Vidalı
+            Kompresörler</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="pistonlu" id="tab-pistonlu">Pistonlu
+            Kompresörler</button>
+          <button class="tab-btn" role="tab" aria-selected="false" data-tab="seyyar" id="tab-seyyar">Seyyar
+            Kompresörler</button>
+        </div>
+
+        <!-- Grid -->
+        <div class="product-grid" id="productGrid">
+
+          <div class="product-card reveal" role="article">
+            <div class="product-card-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png"
+                alt="INVERSYS PLUS Serisi" loading="lazy" onerror="this.src='src/fallback-1.jpg'">
+            </div>
+            <div class="product-card-body">
+              <h4>INVERSYS PLUS</h4>
+              <p>Vidalı Kompresör · 5.5-315 kW</p>
+            </div>
+            <div class="product-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="product-card reveal" role="article">
+            <div class="product-card-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png" alt="TIDY Serisi" loading="lazy"
+                onerror="this.src='src/fallback-2.jpg'">
+            </div>
+            <div class="product-card-body">
+              <h4>TIDY Serisi</h4>
+              <p>Vidalı Kompresör · 2.2-37 kW</p>
+            </div>
+            <div class="product-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="product-card reveal" role="article">
+            <div class="product-card-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png" alt="DVK Direk Akuple Serisi"
+                loading="lazy" onerror="this.src='src/fallback-1.jpg'">
+            </div>
+            <div class="product-card-body">
+              <h4>DVK Direk Akuple</h4>
+              <p>Vidalı Kompresör · 22-315 kW</p>
+            </div>
+            <div class="product-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+          <div class="product-card reveal" role="article">
+            <div class="product-card-image">
+              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png" alt="DVK Serisi"
+                loading="lazy" onerror="this.src='src/fallback-3.jpg'">
+            </div>
+            <div class="product-card-body">
+              <h4>DVK Serisi</h4>
+              <p>Vidalı Kompresör · 45-160 kW</p>
+            </div>
+            <div class="product-card-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-right"></i></div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         SERVICES SECTION
+         ============================== -->
+    <section class="services-section" id="services" aria-label="Servis ve Yedek Parça">
+      <div class="container">
+        <div class="services-grid">
+          <div class="services-content reveal">
+            <p class="section-tag" style="color: rgba(255,255,255,0.5)">Destek</p>
+            <h2 class="section-title">Servis &<br>Yedek Parça</h2>
+            <p class="section-subtitle">Güçlü servis ağımız ve geniş yedek parça stokuyla makinelerinizin verimliliğini
+              ve ömrünü maksimuma çıkartıyoruz.</p>
+
+            <div class="services-list">
+              <div class="service-item reveal">
+                <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
+                <div>
+                  <h4>Teknik Servis</h4>
+                  <p>Yetkili teknisyenlerle hızlı ve güvenilir bakım</p>
+                </div>
+              </div>
+              <div class="service-item reveal">
+                <div class="service-icon"><i class="fa-solid fa-gear"></i></div>
+                <div>
+                  <h4>Orijinal Yedek Parça</h4>
+                  <p>Garantili, yüksek kaliteli orijinal parçalar</p>
+                </div>
+              </div>
+              <div class="service-item reveal">
+                <div class="service-icon"><i class="fa-solid fa-shield-halved"></i></div>
+                <div>
+                  <h4>Garanti ve Bakım Sözleşmesi</h4>
+                  <p>Uzun vadeli güvence ve planlı bakım paketleri</p>
+                </div>
+              </div>
+              <div class="service-item reveal">
+                <div class="service-icon"><i class="fa-solid fa-headset"></i></div>
+                <div>
+                  <h4>7/24 Teknik Destek</h4>
+                  <p>Acil durumlarda uzman desteği hemen yanınızda</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="service-image-wrap reveal">
+            <img src="src/service-tech.jpg" alt="Servis teknisyeni çalışıyor" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==============================
+         NEWS SECTION
+         ============================== -->
+    <!-- <section class="news-section" id="news" aria-label="Haberler ve Blog">
+      <div class="container">
+        <div class="news-header">
+          <div>
+            <p class="section-tag">Güncel</p>
+            <h2 class="section-title reveal">Haberler & Blog</h2>
+          </div>
+          <a href="#" class="btn btn-outline-dark reveal">Tüm Haberler <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+
+        <div class="news-grid">
+          <div class="news-card featured reveal">
+            <div class="news-card-image">
+              <img src="src/news-1.jpg"
+                alt="Hannover Messe 2024" loading="lazy">
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-tag">Fuar & Etkinlikler</p>
+              <h3>Dalgakıran, Hannover Messe 2024'te En Yeni Kompresör Çözümlerini Tanıttı</h3>
+              <p class="news-card-date"><i class="fa-regular fa-calendar"></i> 22 Nisan 2024</p>
+            </div>
+          </div>
+
+          <div class="news-card reveal">
+            <div class="news-card-image">
+              <img src="src/news-2.jpg"
+                alt="Enerji verimliliği" loading="lazy">
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-tag">Teknoloji</p>
+              <h3>Değişken Hızlı Kompresörler ile %35'e Kadar Enerji Tasarrufu</h3>
+              <p class="news-card-date"><i class="fa-regular fa-calendar"></i> 10 Mart 2024</p>
+            </div>
+          </div>
+
+          <div class="news-card reveal">
+            <div class="news-card-image">
+              <img src="src/news-3.jpg"
+                alt="Medikal sektör çözümleri" loading="lazy">
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-tag">Sektör Çözümleri</p>
+              <h3>Hastane ve Medikal Alanlarda Güvenilir Basınçlı Hava Sistemleri</h3>
+              <p class="news-card-date"><i class="fa-regular fa-calendar"></i> 15 Şubat 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+
+    <!-- ==============================
+         CTA SECTION
+         ============================== -->
+    <section id="iletisim" class="cta-section" aria-label="İletişime geç">
+      <div class="container">
+        <div class="cta-inner">
+          <div class="cta-text reveal">
+            <h2>Projeniz İçin<br>Doğru Çözümü Bulalım</h2>
+            <p>Uzman ekibimiz, ihtiyaçlarınıza en uygun kompresör sistemini seçmenize yardımcı olsun.</p>
+          </div>
+          <div style="display:flex; gap:16px; flex-wrap: wrap;" class="reveal">
+            <a href="tel:02625032526" class="btn"
+              style="background:var(--white); color: var(--primary); font-weight:800;">
+              <i class="fa-solid fa-phone"></i>
+              0262 503 25 26
+            </a>
+            <a href="mailto:info@airteam.com.tr" class="btn"
+              style="background: rgba(255,255,255,0.18); color: var(--white); border: 2px solid rgba(255,255,255,0.5);">
+              <i class="fa-solid fa-envelope"></i>
+              info@airteam.com.tr
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==============================
+       FOOTER
+       ============================== -->
+  <footer class="site-footer" aria-label="Alt bilgi">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo-text">AIR<span>TEAM</span></div>
+          <p>Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına yüksek performanslı
+            kesintisiz hava çözümleri ile 7/24 orijinal yedek parça ve teknik destek sunuyoruz.</p>
+          <div class="social-links" aria-label="Sosyal medya bağlantıları">
+            <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-link" aria-label="X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" class="social-link" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#" class="social-link" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="#" class="social-link" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Ürünler</h5>
+          <ul>
+            <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
+            <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
+            <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+            <li><a href="urunler.html">Tüm Ürünler</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Kurumsal</h5>
+          <ul>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
+            <li><a href="#iletisim">İletişim</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <p>&copy; 2024 Air Team Kompresör A.Ş. Tüm hakları saklıdır.</p>
+        <div class="footer-bottom-links">
+          <a href="#">Gizlilik Politikası</a>
+          <a href="#">Çerez Politikası</a>
+          <a href="#">KVKK</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top button -->
+  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
