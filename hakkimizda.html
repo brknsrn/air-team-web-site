@@ -181,6 +181,17 @@
     .contact-box a:hover {
       color: var(--primary);
     }
+
+    /* Active Nav Highlighter */
+    .main-nav ul li a.active,
+    .main-nav ul li a.active:hover,
+    .mobile-nav ul li a.active {
+      color: var(--primary) !important;
+    }
+    .main-nav ul li a.active::after {
+      transform: scaleX(1) !important;
+      opacity: 1 !important;
+    }
   </style>
 </head>
 
@@ -193,8 +204,8 @@
       <i class="fa-solid fa-xmark"></i>
     </button>
     <ul>
-      <li><a href="urunler.html" style="text-transform: uppercase;">Ürünler</a></li>
-      <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+      <li><a href="urunler.html">Ürünler</a></li>
+      <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
     </ul>
   </nav>
 
@@ -203,19 +214,19 @@
     <div class="container">
       <div class="header-inner">
         <a href="index.html" class="logo" aria-label="Dalgakıran Ana Sayfa">
-          <div class="logo-text">DALGA<span>KIRAN</span></div>
+          <div class="logo-text">AIR<span>TEAM</span></div>
         </a>
         <nav class="main-nav" aria-label="Ana navigasyon">
           <ul>
             <li>
-              <a href="urunler.html" style="text-transform: uppercase;">Ürünler</a>
+              <a href="urunler.html">Ürünler</a>
               <ul class="dropdown">
                 <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
                 <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
                 <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
               </ul>
             </li>
-            <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+            <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
           </ul>
         </nav>
         <div class="header-actions">

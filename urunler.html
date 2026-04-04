@@ -409,6 +409,17 @@
         font-size: 1.2rem;
       }
     }
+
+    /* Active Nav Highlighter */
+    .main-nav ul li a.active,
+    .main-nav ul li a.active:hover,
+    .mobile-nav ul li a.active {
+      color: var(--primary) !important;
+    }
+    .main-nav ul li a.active::after {
+      transform: scaleX(1) !important;
+      opacity: 1 !important;
+    }
   </style>
 </head>
 
@@ -421,8 +432,8 @@
       <i class="fa-solid fa-xmark"></i>
     </button>
     <ul>
-      <li><a href="urunler.html" style="color:var(--primary); text-transform: uppercase;">Ürünler</a></li>
-      <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+      <li><a href="urunler.html" class="active">Ürünler</a></li>
+      <li><a href="hakkimizda.html">Hakkımızda</a></li>
     </ul>
   </nav>
 
@@ -436,14 +447,14 @@
         <nav class="main-nav" aria-label="Ana navigasyon">
           <ul>
             <li>
-              <a href="urunler.html" style="color:var(--primary); text-transform: uppercase;">Ürünler</a>
+              <a href="urunler.html" class="active">Ürünler</a>
               <ul class="dropdown">
                 <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
                 <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
                 <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
               </ul>
             </li>
-            <li><a href="hakkimizda.html" style="text-transform: uppercase;">Hakkımızda</a></li>
+            <li><a href="hakkimizda.html">Hakkımızda</a></li>
           </ul>
         </nav>
         <div class="header-actions">

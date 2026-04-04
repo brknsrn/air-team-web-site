@@ -189,6 +189,15 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; }
 }
 .main-nav > ul > li:hover > a::after { transform: scaleX(1); }
 .main-nav > ul > li:hover > a { color: var(--white); }
+/* Active Navigation Item */
+.main-nav ul li a.active, 
+.mobile-nav ul li a.active { 
+  color: var(--primary) !important; 
+}
+.main-nav ul li a.active::after { 
+  transform: scaleX(1) !important; 
+  opacity: 1 !important;
+}
 
 /* Dropdown */
 .dropdown {
