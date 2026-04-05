@@ -188,6 +188,7 @@
     .mobile-nav ul li a.active {
       color: var(--primary) !important;
     }
+
     .main-nav ul li a.active::after {
       transform: scaleX(1) !important;
       opacity: 1 !important;
@@ -204,8 +205,8 @@
       <i class="fa-solid fa-xmark"></i>
     </button>
     <ul>
-      <li><a href="urunler.html">Ürünler</a></li>
-      <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+      <li><a href="urunler.html" data-i18n="nav-products">Ürünler</a></li>
+      <li><a href="hakkimizda.html" class="active" data-i18n="nav-about">Hakkımızda</a></li>
     </ul>
   </nav>
 
@@ -219,19 +220,25 @@
         <nav class="main-nav" aria-label="Ana navigasyon">
           <ul>
             <li>
-              <a href="urunler.html">Ürünler</a>
+              <a href="urunler.html" data-i18n="nav-products">Ürünler</a>
               <ul class="dropdown">
-                <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
-                <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
-                <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
+                <li><a href="urunler.html?filter=vidali" data-i18n="nav-vidali">Vidalı Kompresörler</a></li>
+                <li><a href="urunler.html?filter=pistonlu" data-i18n="nav-pistonlu">Pistonlu Kompresörler</a></li>
+                <li><a href="urunler.html?filter=seyyar" data-i18n="nav-seyyar">Seyyar Kompresörler</a></li>
               </ul>
             </li>
-            <li><a href="hakkimizda.html" class="active">Hakkımızda</a></li>
+            <li><a href="hakkimizda.html" class="active" data-i18n="nav-about">Hakkımızda</a></li>
           </ul>
         </nav>
         <div class="header-actions">
-          <!-- <a href="#" aria-label="Arama"><i class="fa-solid fa-magnifying-glass"></i></a> -->
-          <div class="lang-select"><i class="fa-solid fa-globe"></i><span>TR</span></div>
+          <div class="lang-select" aria-label="Dil seçimi">
+            <i class="fa-solid fa-globe"></i>
+            <span>TR</span>
+            <div class="lang-dropdown">
+              <div class="lang-option active" data-lang="tr">TR</div>
+              <div class="lang-option" data-lang="en">EN</div>
+            </div>
+          </div>
         </div>
         <button class="hamburger" id="hamburger" aria-label="Mobil menüyü aç" aria-expanded="false">
           <span></span><span></span><span></span>
@@ -246,14 +253,15 @@
       <div class="container">
         <div class="page-hero-inner">
           <nav class="breadcrumb" aria-label="Breadcrumb">
-            <a href="index.html">Ana Sayfa</a>
+            <a href="index.html" data-i18n="breadcrumb-home">Ana Sayfa</a>
             <i class="fa-solid fa-chevron-right"></i>
-            <span>Kurumsal</span>
+            <span data-i18n="breadcrumb-corporate">Kurumsal</span>
             <i class="fa-solid fa-chevron-right"></i>
-            <span>Hakkımızda</span>
+            <span data-i18n="nav-about">Hakkımızda</span>
           </nav>
-          <h1>Hakkımızda</h1>
-          <p>Yılların tecrübesiyle, endüstriyel kompresör ihtiyaçlarınızda güvenilir çözüm ortağınız.</p>
+          <h1 data-i18n="about-hero-title">Hakkımızda</h1>
+          <p data-i18n="about-hero-desc">Yılların tecrübesiyle, endüstriyel kompresör ihtiyaçlarınızda güvenilir çözüm
+            ortağınız.</p>
         </div>
       </div>
     </section>
@@ -263,14 +271,17 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-text reveal">
-            <h2>Başarıya Giden Yolda Güçlü Çözüm Ortağınız</h2>
-            <p><strong>AirTeam Kompresör</strong> olarak, Gebze ve Kocaeli başta olmak üzere Türkiye'nin dört bir
+            <h2 data-i18n="about-title">Başarıya Giden Yolda Güçlü Çözüm Ortağınız</h2>
+            <p data-i18n="about-p1"><strong>AirTeam Kompresör</strong> olarak, Gebze ve Kocaeli başta olmak üzere
+              Türkiye'nin dört bir
               yanındaki sanayi kuruluşlarına, atölyelere ve fabrikalara yüksek kaliteli basınçlı hava çözümleri
               sunuyoruz.</p>
-            <p>Dalgakıran Kompresör'ün yetkili bayisi ve servis noktası olarak, vidalı ve pistonlu kompresörlerin
+            <p data-i18n="about-p2">Dalgakıran Kompresör'ün yetkili bayisi ve servis noktası olarak, vidalı ve pistonlu
+              kompresörlerin
               satışı, orijinal yedek parça temini, periyodik bakım ve 7/24 teknik servis hizmetlerini uzman kadromuzla
               gerçekleştiriyoruz.</p>
-            <p>Amacımız, müşterilerimizin işletmelerinde kesintisiz üretim yapabilmeleri için en verimli ve enerji
+            <p data-i18n="about-p3">Amacımız, müşterilerimizin işletmelerinde kesintisiz üretim yapabilmeleri için en
+              verimli ve enerji
               tasarruflu kompresör sistemlerini kurmak, satış sonrası desteğimizle her zaman yanlarında olmaktır.</p>
           </div>
           <div class="about-image reveal">
@@ -281,17 +292,17 @@
         <div class="contact-info-boxes reveal" style="margin-top: 80px;">
           <div class="contact-box">
             <i class="fa-solid fa-phone-volume"></i>
-            <h3>Telefon</h3>
+            <h3 data-i18n="contact-phone">Telefon</h3>
             <p><a href="tel:02625032526">0262 503 25 26</a></p>
           </div>
           <div class="contact-box">
             <i class="fa-solid fa-envelope-open-text"></i>
-            <h3>E-Posta</h3>
+            <h3 data-i18n="contact-email">E-Posta</h3>
             <p><a href="mailto:info@airteam.com.tr">info@airteam.com.tr</a></p>
           </div>
           <div class="contact-box">
             <i class="fa-solid fa-map-location-dot"></i>
-            <h3>Adres</h3>
+            <h3 data-i18n="contact-address">Adres</h3>
             <p>Yenikent mahallesi Mutlukent bulvarı no 7 kapı no 2 <br> Gebze / Kocaeli</p>
           </div>
         </div>
@@ -330,7 +341,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <div class="logo-text">AIR<span>TEAM</span></div>
-          <p>Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına yüksek performanslı
+          <p data-i18n="footer-desc">Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına
+            yüksek performanslı
             kesintisiz hava çözümleri ile 7/24 orijinal yedek parça ve teknik destek sunuyoruz.</p>
           <div class="social-links" aria-label="Sosyal medya bağlantıları">
             <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -342,40 +354,42 @@
         </div>
 
         <div class="footer-col">
-          <h5>Ürünler</h5>
+          <h5 data-i18n="footer-products">Ürünler</h5>
           <ul>
-            <li><a href="urunler.html?filter=vidali">Vidalı Kompresörler</a></li>
-            <li><a href="urunler.html?filter=pistonlu">Pistonlu Kompresörler</a></li>
-            <li><a href="urunler.html?filter=seyyar">Seyyar Kompresörler</a></li>
-            <li><a href="urunler.html">Tüm Ürünler</a></li>
+            <li><a href="urunler.html?filter=vidali" data-i18n="nav-vidali">Vidalı Kompresörler</a></li>
+            <li><a href="urunler.html?filter=pistonlu" data-i18n="nav-pistonlu">Pistonlu Kompresörler</a></li>
+            <li><a href="urunler.html?filter=seyyar" data-i18n="nav-seyyar">Seyyar Kompresörler</a></li>
+            <li><a href="urunler.html" data-i18n="nav-all-products">Tüm Ürünler</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5>Kurumsal</h5>
+          <h5 data-i18n="footer-corporate">Kurumsal</h5>
           <ul>
-            <li><a href="hakkimizda.html">Hakkımızda</a></li>
-            <li><a href="#iletisim">İletişim</a></li>
+            <li><a href="hakkimizda.html" data-i18n="nav-about">Hakkımızda</a></li>
+            <li><a href="#iletisim" data-i18n="nav-contact">İletişim</a></li>
           </ul>
         </div>
       </div>
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <p>&copy; 2024 Air Team Kompresör A.Ş. Tüm hakları saklıdır.</p>
+        <p data-i18n="footer-rights">© 2024 Air Team Kompresör A.Ş. Tüm hakları saklıdır.</p>
         <div class="footer-bottom-links">
-          <a href="#">Gizlilik Politikası</a>
-          <a href="#">Çerez Politikası</a>
-          <a href="#">KVKK</a>
+          <a href="#" data-i18n="footer-privacy">Gizlilik Politikası</a>
+          <a href="#" data-i18n="footer-cookie">Çerez Politikası</a>
+          <a href="#" data-i18n="footer-kvkk">KVKK</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git">
+  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git" data-i18n="aria-back-to-top"
+    data-i18n-aria="true">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
+  <script src="translations.js"></script>
   <script src="script.js"></script>
 </body>
 

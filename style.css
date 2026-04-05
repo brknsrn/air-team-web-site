@@ -252,6 +252,7 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; }
 }
 .header-actions a:hover { color: var(--white); }
 .lang-select {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -260,12 +261,67 @@ h1, h2, h3, h4, h5, h6 { font-weight: 700; line-height: 1.2; }
   font-weight: 700;
   letter-spacing: 1px;
   cursor: pointer;
-  transition: color var(--transition);
-  padding: 4px 10px;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 3px;
+  transition: all var(--transition);
+  padding: 6px 12px;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 4px;
 }
-.lang-select:hover { color: var(--white); border-color: rgba(255,255,255,0.6); }
+.lang-select:hover {
+  background: rgba(255,255,255,0.1);
+  border-color: var(--primary);
+  color: var(--white);
+}
+.lang-select i { font-size: 0.8rem; }
+
+/* Language Dropdown */
+.lang-dropdown {
+  position: absolute;
+  top: calc(100% + 5px);
+  right: 0;
+  background: var(--white);
+  min-width: 100px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-lg);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all var(--transition);
+  z-index: 1100;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+.lang-select:hover .lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.lang-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 16px;
+  color: var(--dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  transition: all var(--transition);
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.lang-option:last-child { border-bottom: none; }
+.lang-option:hover {
+  background: var(--light-gray);
+  color: var(--primary);
+}
+.lang-option.active {
+  background: var(--light-gray);
+  color: var(--primary);
+}
+.lang-option.active::after {
+  content: '\f00c';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  font-size: 0.65rem;
+}
 
 /* Mobile hamburger */
 .hamburger {

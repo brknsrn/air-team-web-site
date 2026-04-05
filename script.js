@@ -1,9 +1,85 @@
 /**
- * Dalgakıran Static Website - Main JS
- * Features: Hero Slider, Sticky Header, Scroll Reveal, Count-Up, Mobile Nav, Back-to-top
+ * AirTeam Static Website - Main JS
+ * Features: Hero Slider, Sticky Header, Scroll Reveal, Count-Up, Mobile Nav, Back-to-top, Multi-language
  */
 
 'use strict';
+
+/* ========================================
+   LANGUAGE / LOCALIZATION
+   ======================================== */
+const i18nSetup = () => {
+  const langSelects = document.querySelectorAll('.lang-select');
+  const currentLangDisplay = document.querySelector('.lang-select > span');
+  
+  // Set initial language from localStorage or default to 'tr'
+  let currentLang = localStorage.getItem('airteam_lang') || 'tr';
+  
+  // Safety check: if translations is not defined, abort i18n but don't crash
+  if (typeof translations === 'undefined') {
+    console.warn('Translations not loaded. Localization aborted.');
+    return;
+  }
+  
+  const updateActiveOption = (lang) => {
+    document.querySelectorAll('.lang-option').forEach(opt => {
+      opt.classList.toggle('active', opt.dataset.lang === lang);
+    });
+  };
+
+  const localize = (lang) => {
+    const elements = document.querySelectorAll('[data-i18n]');
+    elements.forEach(el => {
+      const key = el.dataset.i18n;
+      const translation = translations[lang][key];
+      
+      if (translation) {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          el.placeholder = translation;
+        } else if (el.hasAttribute('data-i18n-aria')) {
+          el.setAttribute('aria-label', translation);
+        } else {
+          el.innerHTML = translation;
+        }
+      }
+    });
+
+    // Update HTML lang attribute
+    document.documentElement.lang = lang;
+    
+    // Update display text
+    if (currentLangDisplay) currentLangDisplay.textContent = lang.toUpperCase();
+    
+    // Custom logic for components that might need re-render (like products)
+    if (typeof productTabsSetup === 'function') {
+       // Refresh product tabs data if on homepage
+       const activeTab = document.querySelector('.tab-btn.active');
+       if (activeTab) {
+         const event = new CustomEvent('langChanged', { detail: { lang } });
+         window.dispatchEvent(event);
+       }
+    }
+    
+    updateActiveOption(lang);
+  };
+
+  // Bind dropdown options
+  document.querySelectorAll('.lang-option').forEach(opt => {
+    opt.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const lang = opt.dataset.lang;
+      if (lang !== currentLang) {
+        currentLang = lang;
+        localStorage.setItem('airteam_lang', lang);
+        localize(lang);
+      }
+    });
+  });
+
+  // Initial localization
+  localize(currentLang);
+};
+
 
 /* ========================================
    HERO SLIDER
@@ -204,27 +280,31 @@ const productTabsSetup = () => {
   const tabBtns = document.querySelectorAll('.tab-btn');
   if (!tabBtns.length) return;
 
-  // Product data for each tab
-  const productData = {
-    'vidali': [
-      { name: 'INVERSYS PLUS', desc: 'Vidalı Kompresör · 5.5-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png' },
-      { name: 'TIDY Serisi', desc: 'Vidalı Kompresör · 2.2-37 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png' },
-      { name: 'DVK Direk Akuple', desc: 'Vidalı Kompresör · 22-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png' },
-      { name: 'DVK Serisi', desc: 'Vidalı Kompresör · 45-160 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png' },
-    ],
-    'seyyar': [
-      { name: 'PORTAIR Serisi', desc: 'Seyyar Kompresör · Yüksek Performans', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u5-1024x806.png' },
-    ],
-    'pistonlu': [
-      { name: 'Tek ve Çift Kademeli', desc: 'Pistonlu Seri · Klasik ve Dayanıklı', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png' },
-    ],
+  // Product data for each tab - Translated version
+  const getProductData = (lang) => {
+    const isTr = lang === 'tr';
+    return {
+      'vidali': [
+        { name: isTr ? 'INVERSYS PLUS Serisi' : 'INVERSYS PLUS Series', desc: isTr ? 'Vidalı Kompresör · 5,5-315 kW' : 'Screw Compressor · 5.5-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png' },
+        { name: isTr ? 'TIDY Serisi' : 'TIDY Series', desc: isTr ? 'Vidalı Kompresör · 2,2-37 kW' : 'Screw Compressor · 2.2-37 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png' },
+        { name: isTr ? 'DVK Direk Akuple Serisi' : 'DVK Direct Coupled Series', desc: isTr ? 'Vidalı Kompresör · 22-315 kW' : 'Screw Compressor · 22-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png' },
+        { name: isTr ? 'DVK Serisi' : 'DVK Series', desc: isTr ? 'Vidalı Kompresör · 45-160 kW' : 'Screw Compressor · 45-160 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png' },
+      ],
+      'seyyar': [
+        { name: isTr ? 'PORTAIR Serisi' : 'PORTAIR Series', desc: isTr ? 'Seyyar Kompresör · Yüksek Performans' : 'Portable Compressor · High Performance', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u5-1024x806.png' },
+      ],
+      'pistonlu': [
+        { name: isTr ? 'Tek ve Çift Kademeli Serisi' : 'Single & Double Stage Series', desc: isTr ? 'Pistonlu Seri · Klasik ve Dayanıklı' : 'Piston Series · Classic & Durable', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png' },
+      ],
+    };
   };
 
   const renderProducts = (tabKey) => {
     const grid = document.getElementById('productGrid');
     if (!grid) return;
 
-    const products = productData[tabKey] || [];
+    const lang = localStorage.getItem('airteam_lang') || 'tr';
+    const products = getProductData(lang)[tabKey] || [];
 
     grid.style.opacity = '0';
     grid.style.transform = 'translateY(16px)';
@@ -257,6 +337,12 @@ const productTabsSetup = () => {
       renderProducts(btn.dataset.tab);
     });
   });
+
+  // Re-render when language changes (for home page product tabs)
+  window.addEventListener('langChanged', () => {
+    const activeTab = document.querySelector('.tab-btn.active');
+    if (activeTab) renderProducts(activeTab.dataset.tab);
+  });
 };
 
 
@@ -280,6 +366,7 @@ const smoothScrollSetup = () => {
    INIT
    ======================================== */
 document.addEventListener('DOMContentLoaded', () => {
+  i18nSetup(); // Run localization first
   sliderSetup();
   headerSetup();
   mobileNavSetup();
