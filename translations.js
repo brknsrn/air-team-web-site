@@ -7,6 +7,9 @@ const translations = {
     "nav-vidali": "Vidalı Kompresörler",
     "nav-pistonlu": "Pistonlu Kompresörler",
     "nav-seyyar": "Seyyar Kompresörler",
+    "nav-kompresorler": "Kompresörler",
+    "nav-basinc": "Basınçlı Hava Ekipmanları",
+    "nav-gaz": "Gaz Kompresörleri",
     "nav-all-products": "Tüm Ürünler",
     
     // Hero Slider
@@ -86,17 +89,25 @@ const translations = {
     "cat-vidali": "Vidalı Kompresörler",
     "cat-pistonlu": "Pistonlu Kompresörler",
     "cat-seyyar": "Seyyar Kompresörler",
-    "cat-vidali-count": "4 Seri",
-    "cat-pistonlu-count": "1 Seri",
-    "cat-seyyar-count": "1 Seri",
+    "cat-vidali-count": "11 Ürün Grubu",
+    "cat-pistonlu-count": "1 Ürün Grubu",
+    "cat-seyyar-count": "1 Ürün Grubu",
     
     // Product Details
     "btn-examine": "Detaylı İncele",
     "btn-quote": "Teklif Al",
+    "btn-info": "Bilgi Al",
     "badge-new-gen": "YENİ NESİL",
     "badge-high-perf": "YÜK. PERFORMANS",
-    "badge-portable": "TAŞINABILIR",
+    "badge-portable": "TAŞINABİLİR",
     "badge-classic": "KLASİK",
+    "badge-yagsiz": "YAĞSIZ",
+    "badge-high-press": "YÜKSEK BASINÇ",
+    "badge-yagsiz-gaz": "YAĞSIZ GAZ",
+    "badge-nem-alma": "NEM ALMA",
+    "badge-filtrasyon": "FİLTRASYON",
+    "badge-ses-hassas": "SES-HASSAS",
+    "badge-yuksek-debi": "YÜKSEK DEBİ",
     
     // About Page
     "about-hero-title": "Hakkımızda",
@@ -112,6 +123,39 @@ const translations = {
     "contact-phone": "Telefon",
     "contact-email": "E-Posta",
     "contact-address": "Adres",
+    "contact-call": "Hemen Ara",
+
+    // Product Detail Descriptions
+    "prod-cta-title": "Hangi Kompresör Size Uygun?",
+    "prod-cta-desc": "Teknik ekibimiz doğru ürünü seçmenize yardımcı olsun.",
+    
+    "prod-title-impetus": "IMPETUS Serisi",
+    "prod-title-inversys": "INVERSYS PLUS Serisi",
+    "prod-title-tidy": "TIDY Serisi",
+    "prod-title-laser": "LASER Serisi",
+    "prod-title-dvk-direk": "DVK Direk Akuple Serisi",
+    "prod-title-dvk-seri": "DVK Serisi",
+    "prod-title-eagle": "EAGLE Serisi",
+    "prod-title-wave": "WAVE Serisi",
+    "prod-title-petmaster": "PET MASTER Serisi",
+    "prod-title-dryair": "DRYAIR Serisi",
+    "prod-title-filterair": "FILTERAIR Serisi",
+    "prod-title-scroll": "DS SCROLL Serisi",
+    "prod-title-turbo": "IHI DALGAKIRAN Serisi",
+
+    "prod-impetus-desc": "Çift kademeli sıkıştırma tekniğiyle rakipsiz enerji verimliliği sağlayan yağ enjekteli vidalı kompresör serisidir.",
+    "prod-inversys-desc": "Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde <strong>%35'e varan enerji tasarrufu</strong> sağlayan endüstriyel çözüm.",
+    "prod-eagle-desc": "%100 yağsız hava ihtiyacı duyulan kritik sektörler için Class 0 sertifikalı çözüm ortağınız.",
+    "prod-wave-desc": "12-40 bar arası yüksek basınç ihtiyacına yönelik, 3 kademeli ve hava soğutmalı endüstriyel pistonlu kompresörler.",
+    "prod-petmaster-desc": "PET şişeleme prosesleri için 40 bar yüksek basınçlı ve %100 yağsız hava sağlayan sanayi tipi çözüm.",
+    "prod-dryair-desc": "Basınçlı havadaki nemi yoğuşturarak sistemden uzaklaştıran, düşük basınç kayıplı profesyonel kurutucular.",
+    "prod-filterair-desc": "Havadaki yağı, koku ve partikülleri 0.01 mikrona kadar temizleyen, alüminyum gövdeli hat filtreleri.",
+    "prod-scroll-desc": "Hassas prosesler için %100 yağsız hava sağlayan, ultra sessiz ve kompakt scroll kompresörler.",
+    "prod-turbo-desc": "Büyük tesisler için devasa ölçekte hava debisi sağlayan, 2000 kW güce kadar su soğutmalı turbo çözümleri.",
+    
+    "prod-tidy-desc": "Basit, güvenilir ve kompakt tasarım. Küçük ve orta ölçekli işletmelerde yüksek performans ve kolay bakım sunar.",
+    "prod-dvk-direk-desc": "Yüksek performans ve dayanıklılık sunan, direkt akuple sistemi ile enerji kaybını minimize eden endüstriyel seri.",
+    "prod-dvk-seri-desc": "Basit, sağlam ve sahada on binlerce adetle kanıtlanmış güvenilir vidalı kompresör tasarımı.",
 
     // Product Detail Descriptions
     "prod-cta-title": "Hangi Kompresör Size Uygun?",
@@ -175,6 +219,9 @@ const translations = {
     "nav-vidali": "Screw Compressors",
     "nav-pistonlu": "Piston Compressors",
     "nav-seyyar": "Portable Compressors",
+    "nav-kompresorler": "Compressors",
+    "nav-basinc": "Compressed Air Equipment",
+    "nav-gaz": "Gas Compressors",
     "nav-all-products": "All Products",
     
     // Hero Slider
@@ -254,17 +301,25 @@ const translations = {
     "cat-vidali": "Screw Compressors",
     "cat-pistonlu": "Piston Compressors",
     "cat-seyyar": "Portable Compressors",
-    "cat-vidali-count": "4 Series",
-    "cat-pistonlu-count": "1 Series",
-    "cat-seyyar-count": "1 Series",
+    "cat-vidali-count": "11 Product Groups",
+    "cat-pistonlu-count": "1 Product Group",
+    "cat-seyyar-count": "1 Product Group",
     
     // Product Details
     "btn-examine": "Examine Details",
     "btn-quote": "Get a Quote",
+    "btn-info": "Get Info",
     "badge-new-gen": "NEW GEN",
     "badge-high-perf": "HIGH PERF",
     "badge-portable": "PORTABLE",
     "badge-classic": "CLASSIC",
+    "badge-yagsiz": "OIL-FREE",
+    "badge-high-press": "HIGH PRESS",
+    "badge-yagsiz-gaz": "OIL-FREE GAS",
+    "badge-nem-alma": "DRYING",
+    "badge-filtrasyon": "FILTRATION",
+    "badge-ses-hassas": "SILENT",
+    "badge-yuksek-debi": "HIGH FLOW",
     
     // About Page
     "about-hero-title": "About Us",
@@ -280,6 +335,39 @@ const translations = {
     "contact-phone": "Phone",
     "contact-email": "Email",
     "contact-address": "Address",
+    "contact-call": "Call Now",
+ 
+    // Product Detail Descriptions
+    "prod-cta-title": "Which Compressor is Right for You?",
+    "prod-cta-desc": "Let our technical team help you choose the right product.",
+    
+    "prod-title-impetus": "IMPETUS Series",
+    "prod-title-inversys": "INVERSYS PLUS Series",
+    "prod-title-tidy": "TIDY Series",
+    "prod-title-laser": "LASER Series",
+    "prod-title-dvk-direk": "DVK Direct Coupled Series",
+    "prod-title-dvk-seri": "DVK Series",
+    "prod-title-eagle": "EAGLE Series",
+    "prod-title-wave": "WAVE Series",
+    "prod-title-petmaster": "PET MASTER Series",
+    "prod-title-dryair": "DRYAIR Series",
+    "prod-title-filterair": "FILTERAIR Series",
+    "prod-title-scroll": "DS SCROLL Series",
+    "prod-title-turbo": "IHI DALGAKIRAN Series",
+
+    "prod-impetus-desc": "Oil-injected screw compressor series providing unrivaled energy efficiency with double-stage compression technique.",
+    "prod-inversys-desc": "Industrial solution providing up to 35% energy savings thanks to variable speed and direct coupled power transmission.",
+    "prod-eagle-desc": "Your Class 0 certified solution partner for critical sectors requiring 100% oil-free air.",
+    "prod-wave-desc": "Industrial 3-stage and air-cooled piston compressors for high pressure needs between 12-40 bar.",
+    "prod-petmaster-desc": "Industrial type solution providing 40 bar high pressure and 100% oil-free air for PET bottling processes.",
+    "prod-dryair-desc": "Professional air dryers with low pressure loss, removing moisture from compressed air by condensing it.",
+    "prod-filterair-desc": "Aluminum housing line filters cleaning oil, odor, and particles in the air down to 0.01 microns.",
+    "prod-scroll-desc": "Ultra-silent and compact scroll compressors providing 100% oil-free air for sensitive processes.",
+    "prod-turbo-desc": "Water-cooled turbo solutions providing massive air flow for large plants, up to 2000 kW power.",
+    
+    "prod-tidy-desc": "Simple, reliable, and compact design. Offers high performance and easy maintenance in small and medium-sized enterprises.",
+    "prod-dvk-direk-desc": "Industrial series offering high performance and durability, minimizing energy loss with its direct coupled system.",
+    "prod-dvk-seri-desc": "Simple, robust, and field-proven reliable screw compressor design with tens of thousands of units.",
 
     // Product Detail Descriptions
     "prod-cta-title": "Which Compressor is Right for You?",

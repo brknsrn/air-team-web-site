@@ -285,16 +285,17 @@ const productTabsSetup = () => {
     const isTr = lang === 'tr';
     return {
       'vidali': [
+        { name: isTr ? 'IMPETUS Serisi' : 'IMPETUS Series', desc: isTr ? 'Yağ Enjekteli Vidalı · Çift Kademeli Sıkıştırma' : 'Oil Injected Screw · Double Stage Compression', img: 'https://www.dalgakiran.com/DataPict/Large/impetus-22-110-vitrin-1-ba.png' },
+        { name: isTr ? 'EAGLE Serisi' : 'EAGLE Series', desc: isTr ? 'Yağsız Vidalı · %100 Yağsız Class 0' : 'Oil-Free Screw · 100% Oil-Free Class 0', img: 'src/placeholder.jpg' },
         { name: isTr ? 'INVERSYS PLUS Serisi' : 'INVERSYS PLUS Series', desc: isTr ? 'Vidalı Kompresör · 5,5-315 kW' : 'Screw Compressor · 5.5-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png' },
         { name: isTr ? 'TIDY Serisi' : 'TIDY Series', desc: isTr ? 'Vidalı Kompresör · 2,2-37 kW' : 'Screw Compressor · 2.2-37 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png' },
-        { name: isTr ? 'DVK Direk Akuple Serisi' : 'DVK Direct Coupled Series', desc: isTr ? 'Vidalı Kompresör · 22-315 kW' : 'Screw Compressor · 22-315 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png' },
-        { name: isTr ? 'DVK Serisi' : 'DVK Series', desc: isTr ? 'Vidalı Kompresör · 45-160 kW' : 'Screw Compressor · 45-160 kW', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png' },
       ],
       'seyyar': [
         { name: isTr ? 'PORTAIR Serisi' : 'PORTAIR Series', desc: isTr ? 'Seyyar Kompresör · Yüksek Performans' : 'Portable Compressor · High Performance', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/u5-1024x806.png' },
       ],
       'pistonlu': [
-        { name: isTr ? 'Tek ve Çift Kademeli Serisi' : 'Single & Double Stage Series', desc: isTr ? 'Pistonlu Seri · Klasik ve Dayanıklı' : 'Piston Series · Classic & Durable', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png' },
+        { name: isTr ? 'PET MASTER Serisi' : 'PET MASTER Series', desc: isTr ? '40 Bar Yağsız Pistonlu · PET Şişeleme' : '40 Bar Oil-Free Piston · PET Bottling', img: 'src/placeholder.jpg' },
+        { name: isTr ? 'D - WAVE Serisi' : 'D - WAVE Series', desc: isTr ? 'Pistonlu Seri · Klasik ve Dayanıklı' : 'Piston Series · Classic & Durable', img: 'https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png' },
       ],
     };
   };

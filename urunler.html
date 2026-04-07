@@ -496,9 +496,9 @@
       <div class="container">
         <div class="filter-bar-inner">
           <button class="filter-btn active" data-filter="all" data-i18n="filter-all">Tümü</button>
-          <button class="filter-btn" data-filter="vidali" data-i18n="filter-vidali">Vidalı Kompresörler</button>
-          <button class="filter-btn" data-filter="pistonlu" data-i18n="filter-pistonlu">Pistonlu Kompresörler</button>
-          <button class="filter-btn" data-filter="seyyar" data-i18n="filter-seyyar">Seyyar Kompresörler</button>
+          <button class="filter-btn" data-filter="kompresorler" data-i18n="nav-kompresorler">Kompresörler</button>
+          <button class="filter-btn" data-filter="basinc" data-i18n="nav-basinc">Basınçlı Hava Ekipmanları</button>
+          <button class="filter-btn" data-filter="gaz" data-i18n="nav-gaz">Gaz Kompresörleri</button>
         </div>
       </div>
     </div>
@@ -508,7 +508,7 @@
       <div class="container">
         <!-- Toolbar -->
         <div class="products-toolbar">
-          <p class="products-count"><span id="productCount">6</span> <span data-i18n="prod-count-text">ürün listeleniyor</span></p>
+          <p class="products-count"><span id="productCount">14</span> <span data-i18n="prod-count-text">ürün listeleniyor</span></p>
           <div style="display:flex; align-items:center; gap: 12px;">
             <div class="view-toggle" role="group" aria-label="Görünüm seçimi">
               <button class="view-btn active" id="viewList" title="Liste görünümü" data-i18n-aria="prod-view-list" aria-pressed="true">
@@ -521,214 +521,381 @@
           </div>
         </div>
 
-        <!-- Vidalı Kompresörler Group -->
-        <div class="product-category-group" data-category="vidali" id="groupVidali">
+        <!-- Kompresörler Group -->
+        <div class="product-category-group active" data-category="kompresorler" id="groupKompresorler">
           <div class="category-header">
-            <h2 data-i18n="cat-vidali">Vidalı Kompresörler</h2>
-            <span class="category-count" data-i18n="cat-vidali-count">4 Seri</span>
+            <h2 data-i18n="nav-kompresorler">Kompresörler</h2>
+            <span class="category-count">11 Ürün Grubu</span>
           </div>
 
-          <!-- INVERSYS PLUS -->
-          <div class="product-detail-card reveal" data-filter="vidali">
-            <div class="product-detail-image">
-              <span class="product-badge" data-i18n="badge-new-gen">YENİ NESİL</span>
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u1-1024x832.png"
-                alt="INVERSYS PLUS Serisi Vidalı Kompresör" loading="lazy" onerror="this.src='src/fallback-1.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
-              <h3 data-i18n="prod-title-inversys">INVERSYS PLUS Serisi</h3>
-              <p data-i18n="prod-inversys-desc">Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde <strong>%35'e varan enerji tasarrufu</strong>. Yağ enjekteli vidalı kompresör. 5,5 kW – 315 kW arasındaki tüm gereksinimleri karşılar.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-inversys-spec1">5,5 kW – 315 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="prod-inversys-spec2">Değişken Hızlı (VSD)</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-inversys-spec3">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-leaf"></i> <span data-i18n="prod-inversys-spec4">%35 Enerji Tasarrufu</span></div>
+          <div class="products-wrapper">
+            <!-- Alt Kategori 1 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">YAĞ ENJEKTELİ VİDALI KOMPRESÖRLER</h3>
+              
+              <!-- Ürün 1 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge">YÜK. VERİM</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/impetus-seri-gorseli-1-ff.png" alt="IMPETUS SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=IMPETUS'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Yağ Enjekteli Vidalı Kompresör</p>
+                  <h3>IMPETUS SERİSİ</h3>
+                  <p>Dalgakıran Impetus Serisi <strong>çift kademeli</strong> kompresörler, üstün teknolojik donanımı, modern tasarımı ve yüksek enerji tasarrufu ile öne çıkar. Impetus VSD modellerin enerji tasarrufu <strong>%65 seviyelerine</strong> kadar çıkmaktadır. Her sektörün ihtiyacını karşılayacak şekilde tasarlanmıştır.</p>
+                  <div class="spec-chips">
+                    <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span>22 kW – 315 kW</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-leaf"></i> <span>%65 Enerji Tasarrufu</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-layer-group"></i> <span>Çift Kademeli</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span>VSD Teknolojisi</span></div>
+                  </div>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                    <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Teklif Al</a>
+                  </div>
+                </div>
               </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/inversys-plus-serisi/" target="_blank"
-                  class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- TIDY -->
-          <div class="product-detail-card reveal" data-filter="vidali">
-            <div class="product-detail-image">
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u2.png" alt="TIDY Serisi Vidalı Kompresör"
-                loading="lazy" onerror="this.src='src/fallback-2.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
-              <h3 data-i18n="prod-title-tidy">TIDY Serisi</h3>
-              <p data-i18n="prod-tidy-desc">Basit, güvenilir ve kompakt tasarım. Bakımı kolay ve uzun ömürlü. Yüksek performanslı çalışmaları sayesinde <strong>küçük ve orta ölçekli işletmelerde</strong> güvenle kullanılmaktadır. 2,2 kW – 37 kW arasındaki tüm gereksinimleri karşılar.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-tidy-spec1">2,2 kW – 37 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-tidy-spec2">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="prod-tidy-spec3">Kolay Bakım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-building"></i> <span data-i18n="prod-tidy-spec4">KOBİ için İdeal</span></div>
+              <!-- Ürün 2 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge">KOMPAKT</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/tidy-serisi-vitrin-1-be.png" alt="TIDY SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Yağ Enjekteli Vidalı Kompresör</p>
+                  <h3>TIDY SERİSİ</h3>
+                  <p>Kompakt tasarımı ve yüksek verimliliği ile küçük ve orta ölçekli işletmelerin bir numaralı tercihi. Yerden tasarruf sağlayan entegre depo seçenekleri mevcuttur.</p>
+                  <div class="spec-chips">
+                    <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span>2.2 kW – 37 kW</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-compress"></i> <span>Kompakt Tasarım</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-gears"></i> <span>Kayış-Kasnak</span></div>
+                  </div>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-tidy.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                    <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Teklif Al</a>
+                  </div>
+                </div>
               </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/tidy-serisi/" target="_blank" class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- DVK Direk Akuple -->
-          <div class="product-detail-card reveal" data-filter="vidali">
-            <div class="product-detail-image">
-              <span class="product-badge">YÜK. PERFORMANS</span>
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u3.png" alt="DVK Direk Akuple Serisi"
-                loading="lazy" onerror="this.src='src/fallback-1.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
-              <h3 data-i18n="prod-title-dvk-direk">DVK Direk Akuple Serisi</h3>
-              <p data-i18n="prod-dvk-direk-desc">Yüksek performans, güvenilirlik ve dayanıklılık sunar. <strong>Direkt akuple güç aktarım sistemi</strong> ile enerji kaybını minimize eder. 22 kW ve 315 kW arasındaki tüm gereksinimleri karşılar.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-direk-spec1">22 kW – 315 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-link"></i> <span data-i18n="prod-dvk-direk-spec2">Direk Akuple</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-direk-spec3">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="prod-dvk-direk-spec4">Yüksek Dayanıklılık</span></div>
+              <!-- Ürün 3 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge">VSD / ENERJİ</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/inversys-ve-inversys-plus-serisi-vitrin-1-be.png" alt="INVERSYS PLUS SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Yağ Enjekteli Vidalı Kompresör</p>
+                  <h3>INVERSYS PLUS SERİSİ</h3>
+                  <p>Değişken hızlı (VSD) teknolojisi ile %35'e varan enerji tasarrufu. Endüstri 4.0 uyumlu akıllı kontrol ve direkt tahrik sistemi ile maksimum verimlilik.</p>
+                  <div class="spec-chips">
+                    <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span>18 kW – 315 kW</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-leaf"></i> <span>%35 Enerji Tasarrufu</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span>VSD Teknolojisi</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-link"></i> <span>Direkt Tahrik</span></div>
+                  </div>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-inversys.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                    <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Teklif Al</a>
+                  </div>
+                </div>
               </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/dvk-direk-akuple-serisi/" target="_blank"
-                  class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- DVK Serisi -->
-          <div class="product-detail-card reveal" data-filter="vidali">
-            <div class="product-detail-image">
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u4-1024x886.png"
-                alt="DVK Serisi Vidalı Kompresör" loading="lazy" onerror="this.src='src/fallback-3.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
-              <h3 data-i18n="prod-title-dvk-seri">DVK Serisi</h3>
-              <p data-i18n="prod-dvk-seri-desc">Basit, güvenilir ve sağlam tasarım. Bakımı kolay ve uzun ömürlü. 45 kW – 160 kW arasındaki tüm gereksinimleri karşılar. <strong>Sahada kullanılan on binlerce kompresör</strong> tarafından kanıtlanmış tasarım ve güvenilirlik.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-seri-spec1">45 kW – 160 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-seri-spec2">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-star"></i> <span data-i18n="prod-dvk-seri-spec3">Kanıtlanmış Tasarım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="prod-dvk-seri-spec4">Uzun Bakım Aralığı</span></div>
+              <!-- Ürün 5 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge">AĞIR HİZMET</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/dvk-serisi-vitrin-1-be.png" alt="DVK SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Yağ Enjekteli Vidalı Kompresör</p>
+                  <h3>DVK SERİSİ</h3>
+                  <p>Ağır sanayi şartları için tasarlanmış, kayış-kasnak tahrikli, dayanıklı ve yüksek performanslı ürün grubumuz. 7/24 kesintisiz çalışma için ideal.</p>
+                  <div class="spec-chips">
+                    <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span>45 kW – 315 kW</span></div>
+                    <div class="spec-chip"><i class="fa-solid fa-gears"></i> <span>Kayış-Kasnak</span></div>
+                  </div>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-dvk.html" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                    <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark"><i class="fa-solid fa-envelope"></i> Teklif Al</a>
+                  </div>
+                </div>
               </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/dvk-serisi/" target="_blank" class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
+
+              <!-- Ürün 6 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-high-perf">DİREKT</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/dvk-d-serisi-vitrin-1-be.png" alt="DVK-D SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
+                  <h3 data-i18n="prod-title-dvk-direk">DVK-D SERİSİ</h3>
+                  <p data-i18n="prod-dvk-direk-desc">DVK serisinin direkt tahrikli versiyonu. Daha düşük enerji kaybı ve minimum bakım ihtiyacı ile yüksek debili hava çözümleri.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-dvk.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Ürün 7 -->
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-high-press">LASER KESİM</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/inversys-plus-pm-laser-serisi-vitrin-1-be.png" alt="LASER SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
+                  <h3 data-i18n="prod-title-laser">LASER SERİSİ</h3>
+                  <p data-i18n="prod-laser-desc">Lazer kesim makineleri için 16-20 bar yüksek basınç ve ultra kuru hava çözümü. Hepsi bir arada kompakt sistem.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-laser.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alt Kategori 2 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">YAĞSIZ VİDALI KOMPRESÖRLER</h3>
+              
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-yagsiz">YAĞSIZ</span>
+                  <img src="src/placeholder.jpg" alt="EAGLE SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=EAGLE'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
+                  <h3 data-i18n="prod-title-eagle">EAGLE SERİSİ</h3>
+                  <p data-i18n="prod-eagle-desc">%100 yağsız hava ihtiyacı duyulan kritik sektörler için Class 0 sertifikalı çözüm ortağınız.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-eagle.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alt Kategori 3 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">PİSTONLU KOMPRESÖRLER</h3>
+              
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-classic">PİSTONLU</span>
+                  <img src="https://www.dalgakiran.com/DataPict/Large/d-serisi-vitrin-1-be.png" alt="D SERİSİ" loading="lazy">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-pistonlu">Pistonlu Kompresör</p>
+                  <h3 data-i18n="prod-title-wave">D - WAVE SERİSİ</h3>
+                  <p data-i18n="prod-wave-desc">Yüksek performanslı, dayanıklı ve uzun ömürlü tek/çift kademeli endüstriyel pistonlu kompresörler.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-piston.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <img src="src/placeholder.jpg" alt="DKC SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=DKC'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Pistonlu Kompresör</p>
+                  <h3>DKC SERİSİ</h3>
+                  <p>Ürün açıklaması buraya eklenecektir.</p>
+                  <div class="product-detail-actions">
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <img src="src/placeholder.jpg" alt="DBK BOOSTER SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=DBK+BOOSTER'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Pistonlu Kompresör</p>
+                  <h3>DBK BOOSTER SERİSİ</h3>
+                  <p>Ürün açıklaması buraya eklenecektir.</p>
+                  <div class="product-detail-actions">
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <img src="src/placeholder.jpg" alt="DBK GP SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=DBK+GP'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Pistonlu Kompresör</p>
+                  <h3>DBK GP SERİSİ</h3>
+                  <p>Ürün açıklaması buraya eklenecektir.</p>
+                  <div class="product-detail-actions">
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-high-press">YÜKSEK BASINÇ</span>
+                  <img src="src/placeholder.jpg" alt="WAVE SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=WAVE'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-pistonlu">Pistonlu Kompresör</p>
+                  <h3 data-i18n="prod-title-wave">WAVE SERİSİ</h3>
+                  <p data-i18n="prod-wave-desc">12-40 bar arası yüksek basınç ihtiyacına yönelik, 3 kademeli ve hava soğutmalı endüstriyel pistonlu kompresörler.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-piston.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <img src="src/placeholder.jpg" alt="DKK SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=DKK'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag">Pistonlu Kompresör</p>
+                  <h3>DKK SERİSİ</h3>
+                  <p>Ürün açıklaması buraya eklenecektir.</p>
+                  <div class="product-detail-actions">
+                    <a href="#" class="btn btn-primary"><i class="fa-solid fa-circle-info"></i> Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alt Kategori 4 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">YAĞSIZ PİSTONLU KOMPRESÖRLER</h3>
+              
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-yagsiz-gaz">YAĞSIZ GAZ</span>
+                  <img src="src/placeholder.jpg" alt="PET MASTER SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=PET+MASTER'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-gaz">Gaz Kompresörü</p>
+                  <h3 data-i18n="prod-title-petmaster">PET MASTER SERİSİ</h3>
+                  <p data-i18n="prod-petmaster-desc">PET şişeleme prosesleri için 40 bar yüksek basınçlı ve %100 yağsız hava sağlayan sanayi tipi çözüm.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-petmaster.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alt Kategori 5 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">SCROLL KOMPRESÖRLER</h3>
+              
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-ses-hassas">SES-HASSAS</span>
+                  <img src="src/placeholder.jpg" alt="DS SCROLL SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=SCROLL'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-kompresorler">Kompresörler</p>
+                  <h3 data-i18n="prod-title-scroll">DS SERİSİ</h3>
+                  <p data-i18n="prod-scroll-desc">Hassas prosesler için %100 yağsız hava sağlayan, ultra sessiz ve kompakt scroll kompresörler.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-scroll.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Alt Kategori 6 -->
+            <div class="subcategory-section" style="margin-top: 2rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem;">
+              <h3 style="margin-bottom: 1.5rem; color: var(--primary); font-size: 1.25rem;">TURBO KOMPRESÖRLER</h3>
+              
+              <div class="product-detail-card reveal" data-filter="kompresorler">
+                <div class="product-detail-image">
+                  <span class="product-badge" data-i18n="badge-yuksek-debi">YÜKSEK DEBİ</span>
+                  <img src="src/placeholder.jpg" alt="TURBO SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=TURBO'">
+                </div>
+                <div class="product-detail-body">
+                  <p class="product-series-tag" data-i18n="nav-kompresorler">Kompresörler</p>
+                  <h3 data-i18n="prod-title-turbo">IHI DALGAKIRAN SERİSİ</h3>
+                  <p data-i18n="prod-turbo-desc">Büyük tesisler için devasa ölçekte hava debisi sağlayan, 2000 kW güce kadar su soğutmalı turbo çözümleri.</p>
+                  <div class="product-detail-actions">
+                    <a href="urun-detay-turbo.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+        <!-- Basınçlı Hava Ekipmanları Group -->
+        <div class="product-category-group" data-category="basinc" id="groupBasinc">
+          <div class="category-header">
+            <h2 data-i18n="nav-basinc">Basınçlı Hava Ekipmanları</h2>
+            <span class="category-count">2 Ürün Grubu</span>
+          </div>
+          
+          <div class="product-grid">
+            <!-- Ekipman 1 -->
+            <div class="product-detail-card reveal" data-filter="basinc">
+              <div class="product-detail-image">
+                <span class="product-badge" data-i18n="badge-nem-alma">NEM ALMA</span>
+                <img src="src/placeholder.jpg" alt="DRYAIR KURUTUCULAR" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=DRYAIR'">
+              </div>
+              <div class="product-detail-body">
+                <p class="product-series-tag" data-i18n="nav-basinc">Hava Ekipmanı</p>
+                <h3 data-i18n="prod-title-dryair">DRYAIR SERİSİ</h3>
+                <p data-i18n="prod-dryair-desc">Basınçlı havadaki nemi yoğuşturarak sistemden uzaklaştıran, düşük basınç kayıplı profesyonel kurutucular.</p>
+                <div class="product-detail-actions">
+                  <a href="urun-detay-dryair.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ekipman 2 -->
+            <div class="product-detail-card reveal" data-filter="basinc">
+              <div class="product-detail-image">
+                <span class="product-badge" data-i18n="badge-filtrasyon">FİLTRASYON</span>
+                <img src="src/placeholder.jpg" alt="FILTERAIR FİLTRELER" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=FILTERAIR'">
+              </div>
+              <div class="product-detail-body">
+                <p class="product-series-tag" data-i18n="nav-basinc">Hava Ekipmanı</p>
+                <h3 data-i18n="prod-title-filterair">FILTERAIR SERİSİ</h3>
+                <p data-i18n="prod-filterair-desc">Havadaki yağı, koku ve partikülleri 0.01 mikrona kadar temizleyen, alüminyum gövdeli hat filtreleri.</p>
+                <div class="product-detail-actions">
+                  <a href="urun-detay-filterair.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        <!-- CTA Strip -->
-        <div class="product-page-cta reveal">
-          <div>
-            <h4 data-i18n="prod-cta-title">Hangi Kompresör Size Uygun?</h4>
-            <p data-i18n="prod-cta-desc">Teknik ekibimiz doğru ürünü seçmenize yardımcı olsun.</p>
-          </div>
-          <div style="display:flex;gap:12px;flex-wrap:wrap;">
-            <a href="tel:02625032526" class="btn btn-primary">
-              <i class="fa-solid fa-phone"></i> 0262 503 25 26
-            </a>
-            <a href="mailto:info@airteam.com.tr" class="btn"
-              style="background:rgba(255,255,255,0.08);color:var(--white);border:1px solid rgba(255,255,255,0.2);">
-              <i class="fa-solid fa-envelope"></i> info@airteam.com.tr
-            </a>
-          </div>
-        </div>
-
-        <!-- Seyyar Kompresörler Group -->
-        <div class="product-category-group" data-category="seyyar" id="groupSeyyar">
+        <!-- Gaz Kompresörleri Group -->
+        <div class="product-category-group" data-category="gaz" id="groupGaz">
           <div class="category-header">
-            <h2 data-i18n="cat-seyyar">Seyyar Kompresörler</h2>
-            <span class="category-count" data-i18n="cat-seyyar-count">1 Seri</span>
+            <h2 data-i18n="nav-gaz">Gaz Kompresörleri</h2>
+            <span class="category-count">1 Ürün Grubu</span>
           </div>
 
-          <!-- PORTAIR -->
-          <div class="product-detail-card reveal" data-filter="seyyar">
-            <div class="product-detail-image">
-              <span class="product-badge" data-i18n="badge-portable">TAŞINABILIR</span>
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/u5-1024x806.png"
-                alt="PORTAIR Seyyar Kompresör Serisi" loading="lazy" onerror="this.src='src/fallback-1.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-seyyar">Seyyar Kompresör</p>
-              <h3 data-i18n="prod-title-portair">PORTAIR Serisi</h3>
-              <p data-i18n="prod-portair-desc">PORTAIR serisi seyyar kompresörler <strong>inşaat, maden ve gemi onarım sektörleri</strong> için kullanımı ideal kompresörlerdir. Yüksek dayanımlı ve yüksek verimli vida blokları sayesinde uzun bakım aralıkları, yüksek performans ve hava debisi sunar.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-truck"></i> <span data-i18n="prod-portair-spec1">Taşınabilir</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-hard-hat"></i> <span data-i18n="prod-portair-spec2">İnşaat / Maden</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-ship"></i> <span data-i18n="prod-portair-spec3">Gemi Onarım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="prod-portair-spec4">Yüksek Hava Debisi</span></div>
-              </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/portair-serisi/" target="_blank" class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Pistonlu Kompresörler Group -->
-        <div class="product-category-group" data-category="pistonlu" id="groupPistonlu">
-          <div class="category-header">
-            <h2 data-i18n="cat-pistonlu">Pistonlu Kompresörler</h2>
-            <span class="category-count" data-i18n="cat-pistonlu-count">1 Seri</span>
+          <div class="product-grid">
+             <!-- Gaz 1 -->
+             <div class="product-detail-card reveal" data-filter="gaz">
+               <div class="product-detail-image">
+                 <span class="product-badge" data-i18n="badge-yagsiz-gaz">PET / 40 BAR</span>
+                 <img src="src/placeholder.jpg" alt="PET MASTER SERİSİ" loading="lazy" onerror="this.src='https://placehold.co/400x300/121212/e63946?text=PET+MASTER'">
+               </div>
+               <div class="product-detail-body">
+                 <p class="product-series-tag" data-i18n="nav-gaz">Gaz Kompresörü</p>
+                 <h3 data-i18n="prod-title-petmaster">PET MASTER SERİSİ</h3>
+                 <p data-i18n="prod-petmaster-desc">PET şişeleme prosesleri için 40 bar yüksek basınçlı ve %100 yağsız hava sağlayan sanayi tipi çözüm.</p>
+                 <div class="product-detail-actions">
+                   <a href="urun-detay-petmaster.html" class="btn btn-primary" data-i18n="btn-examine">Detaylı İncele</a>
+                 </div>
+               </div>
+             </div>
           </div>
 
-          <!-- Tek ve Çift Kademeli -->
-          <div class="product-detail-card reveal" data-filter="pistonlu">
-            <div class="product-detail-image">
-              <span class="product-badge" data-i18n="badge-classic">KLASİK</span>
-              <img src="https://www.aircomp.com.tr/wp-content/uploads/2018/04/tekcift-1024x768.png"
-                alt="Tek ve Çift Kademeli Pistonlu Kompresör" loading="lazy" onerror="this.src='src/fallback-4.jpg'">
-            </div>
-            <div class="product-detail-body">
-              <p class="product-series-tag" data-i18n="nav-pistonlu">Pistonlu Kompresör</p>
-              <h3 data-i18n="prod-title-piston">Tek ve Çift Kademeli Pistonlu Seri</h3>
-              <p data-i18n="prod-piston-desc">Kullanımı kolay, güvenli, uzun ömürlü ve dayanıklı pistonlu kompresörler <strong>küçük işletmeler, atölyeler ve endüstri uygulamaları</strong> için idealdir. 1969 yılından bu yana üretilen bu seri DALGAKIRAN'a duyulan güvenin temelidir.</p>
-              <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-cog"></i> <span data-i18n="prod-piston-spec1">1969'dan Bu Yana</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-store"></i> <span data-i18n="prod-piston-spec2">Atölye / KOBİ</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="prod-piston-spec3">Uzun Ömürlü</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-layers"></i> <span data-i18n="prod-piston-spec4">Tek & Çift Kademeli</span></div>
-              </div>
-              <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/tek-ve-cift-kademeli-pistonlu-seri/" target="_blank"
-                  class="btn btn-primary">
-                  <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
-                <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
-                  <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
-                </a>
-              </div>
-            </div>
-          </div>
         </div>
 
       </div>
@@ -821,10 +988,10 @@
       const allCards = document.querySelectorAll('.product-detail-card');
       const productCount = document.getElementById('productCount');
       const groups = {
-        all: ['groupVidali', 'groupSeyyar', 'groupPistonlu'],
-        vidali: ['groupVidali'],
-        pistonlu: ['groupPistonlu'],
-        seyyar: ['groupSeyyar'],
+        all: ['groupKompresorler', 'groupBasinc', 'groupGaz'],
+        kompresorler: ['groupKompresorler'],
+        basinc: ['groupBasinc'],
+        gaz: ['groupGaz'],
       };
 
       filterBtns.forEach(btn => {
