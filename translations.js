@@ -11,19 +11,19 @@ const translations = {
     "nav-basinc": "Basınçlı Hava Ekipmanları",
     "nav-gaz": "Gaz Kompresörleri",
     "nav-all-products": "Tüm Ürünler",
-    
+
     // Hero Slider
     "hero-1-tag": "Yeni Nesil Kompresör Teknolojisi",
     "hero-1-title": "EAGLE Serisi<br>Vidalı Kompresörler",
     "hero-1-desc": "Düşük enerji tüketimi, yüksek verimlilik. En seçici endüstriyel kullanımlar için üretilmiş kompresör çözümleri.",
     "hero-1-btn": "Ürünleri Keşfet",
-    
-    "hero-2-tag": "130+ Ülkede Güvenilir Çözüm Ortağı",
-    "hero-2-title": "Global Ölçekte<br>Endüstriyel Güç",
-    "hero-2-desc": "1952'den bu yana dünya genelinde 130'dan fazla ülkede faaliyet göstererek global standartlarda hizmet sunuyoruz.",
+
+    "hero-2-tag": "Güvenilir Çözüm Ortağı",
+    "hero-2-title": "Bölgenizdeki<br>Endüstriyel Güç",
+    "hero-2-desc": "Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi tesislerinize yüksek performanslı hava çözümleri sunuyoruz.",
     "hero-2-btn-about": "Hakkımızda",
     "hero-2-btn-catalog": "Katalog",
-    
+
     "hero-3-tag": "7/24 Teknik Destek",
     "hero-3-title": "Her Zaman<br>Yanınızdayız",
     "hero-3-desc": "Satış sonrası teknik destek, yedek parça ve servis hizmetleriyle makinenizin verimliliğini maksimumda tutuyoruz.",
@@ -92,7 +92,7 @@ const translations = {
     "cat-vidali-count": "11 Ürün Grubu",
     "cat-pistonlu-count": "1 Ürün Grubu",
     "cat-seyyar-count": "1 Ürün Grubu",
-    
+
     // Product Details
     "btn-examine": "Detaylı İncele",
     "btn-quote": "Teklif Al",
@@ -108,7 +108,7 @@ const translations = {
     "badge-filtrasyon": "FİLTRASYON",
     "badge-ses-hassas": "SES-HASSAS",
     "badge-yuksek-debi": "YÜKSEK DEBİ",
-    
+
     // About Page
     "about-hero-title": "Hakkımızda",
     "about-hero-desc": "Yılların tecrübesiyle, endüstriyel kompresör ihtiyaçlarınızda güvenilir çözüm ortağınız.",
@@ -128,7 +128,7 @@ const translations = {
     // Product Detail Descriptions
     "prod-cta-title": "Hangi Kompresör Size Uygun?",
     "prod-cta-desc": "Teknik ekibimiz doğru ürünü seçmenize yardımcı olsun.",
-    
+
     "prod-title-impetus": "IMPETUS Serisi",
     "prod-title-inversys": "INVERSYS PLUS Serisi",
     "prod-title-tidy": "TIDY Serisi",
@@ -152,7 +152,7 @@ const translations = {
     "prod-filterair-desc": "Havadaki yağı, koku ve partikülleri 0.01 mikrona kadar temizleyen, alüminyum gövdeli hat filtreleri.",
     "prod-scroll-desc": "Hassas prosesler için %100 yağsız hava sağlayan, ultra sessiz ve kompakt scroll kompresörler.",
     "prod-turbo-desc": "Büyük tesisler için devasa ölçekte hava debisi sağlayan, 2000 kW güce kadar su soğutmalı turbo çözümleri.",
-    
+
     "prod-tidy-desc": "Basit, güvenilir ve kompakt tasarım. Küçük ve orta ölçekli işletmelerde yüksek performans ve kolay bakım sunar.",
     "prod-dvk-direk-desc": "Yüksek performans ve dayanıklılık sunan, direkt akuple sistemi ile enerji kaybını minimize eden endüstriyel seri.",
     "prod-dvk-seri-desc": "Basit, sağlam ve sahada on binlerce adetle kanıtlanmış güvenilir vidalı kompresör tasarımı.",
@@ -160,14 +160,14 @@ const translations = {
     // Product Detail Descriptions
     "prod-cta-title": "Hangi Kompresör Size Uygun?",
     "prod-cta-desc": "Teknik ekibimiz doğru ürünü seçmenize yardımcı olsun.",
-    
+
     "prod-title-inversys": "INVERSYS PLUS Serisi",
     "prod-title-tidy": "TIDY Serisi",
     "prod-title-dvk-direk": "DVK Direk Akuple Serisi",
     "prod-title-dvk-seri": "DVK Serisi",
     "prod-title-portair": "PORTAIR Serisi",
     "prod-title-piston": "Tek ve Çift Kademeli Pistonlu Seri",
-    
+
     "prod-inversys-desc": "Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde <strong>%35'e varan enerji tasarrufu</strong>. Yağ enjekteli vidalı kompresör. 5,5 kW – 315 kW arasındaki tüm gereksinimleri karşılar.",
     "prod-inversys-spec1": "5,5 kW – 315 kW",
     "prod-inversys-spec2": "Değişken Hızlı (VSD)",
@@ -223,19 +223,19 @@ const translations = {
     "nav-basinc": "Compressed Air Equipment",
     "nav-gaz": "Gas Compressors",
     "nav-all-products": "All Products",
-    
+
     // Hero Slider
     "hero-1-tag": "New Generation Compressor Technology",
     "hero-1-title": "EAGLE Series<br>Screw Compressors",
     "hero-1-desc": "Low energy consumption, high efficiency. Compressor solutions manufactured for the most demanding industrial uses.",
     "hero-1-btn": "Explore Products",
-    
-    "hero-2-tag": "Trusted Solution Partner in 130+ Countries",
-    "hero-2-title": "Industrial Power<br>on a Global Scale",
-    "hero-2-desc": "Operating in more than 130 countries worldwide since 1952, providing services at global standards.",
+
+    "hero-2-tag": "Your Trusted Regional Solution Partner",
+    "hero-2-title": "Industrial Power<br>in Gebze & Surrounding Areas",
+    "hero-2-desc": "As an authorized Dalgakiran Compressor dealer and service point, we offer high-performance air solutions for your industrial facilities.",
     "hero-2-btn-about": "About Us",
     "hero-2-btn-catalog": "Catalog",
-    
+
     "hero-3-tag": "24/7 Technical Support",
     "hero-3-title": "We Are Always<br>With You",
     "hero-3-desc": "We maximize your machine's efficiency with after-sales technical support, spare parts, and maintenance services.",
@@ -304,7 +304,7 @@ const translations = {
     "cat-vidali-count": "11 Product Groups",
     "cat-pistonlu-count": "1 Product Group",
     "cat-seyyar-count": "1 Product Group",
-    
+
     // Product Details
     "btn-examine": "Examine Details",
     "btn-quote": "Get a Quote",
@@ -320,7 +320,7 @@ const translations = {
     "badge-filtrasyon": "FILTRATION",
     "badge-ses-hassas": "SILENT",
     "badge-yuksek-debi": "HIGH FLOW",
-    
+
     // About Page
     "about-hero-title": "About Us",
     "about-hero-desc": "Your reliable solution partner in industrial compressor needs with years of experience.",
@@ -336,11 +336,11 @@ const translations = {
     "contact-email": "Email",
     "contact-address": "Address",
     "contact-call": "Call Now",
- 
+
     // Product Detail Descriptions
     "prod-cta-title": "Which Compressor is Right for You?",
     "prod-cta-desc": "Let our technical team help you choose the right product.",
-    
+
     "prod-title-impetus": "IMPETUS Series",
     "prod-title-inversys": "INVERSYS PLUS Series",
     "prod-title-tidy": "TIDY Series",
@@ -364,7 +364,7 @@ const translations = {
     "prod-filterair-desc": "Aluminum housing line filters cleaning oil, odor, and particles in the air down to 0.01 microns.",
     "prod-scroll-desc": "Ultra-silent and compact scroll compressors providing 100% oil-free air for sensitive processes.",
     "prod-turbo-desc": "Water-cooled turbo solutions providing massive air flow for large plants, up to 2000 kW power.",
-    
+
     "prod-tidy-desc": "Simple, reliable, and compact design. Offers high performance and easy maintenance in small and medium-sized enterprises.",
     "prod-dvk-direk-desc": "Industrial series offering high performance and durability, minimizing energy loss with its direct coupled system.",
     "prod-dvk-seri-desc": "Simple, robust, and field-proven reliable screw compressor design with tens of thousands of units.",
@@ -372,14 +372,14 @@ const translations = {
     // Product Detail Descriptions
     "prod-cta-title": "Which Compressor is Right for You?",
     "prod-cta-desc": "Let our technical team help you choose the right product.",
-    
+
     "prod-title-inversys": "INVERSYS PLUS Series",
     "prod-title-tidy": "TIDY Series",
     "prod-title-dvk-direk": "DVK Direct Coupled Series",
     "prod-title-dvk-seri": "DVK Series",
     "prod-title-portair": "PORTAIR Series",
     "prod-title-piston": "Single & Double Stage Piston Series",
-    
+
     "prod-inversys-desc": "Up to <strong>35% energy savings</strong> thanks to high-efficiency permanent magnet motor technology and inverter drives. Oil-injected screw compressor. Meets all requirements between 5.5 kW – 315 kW.",
     "prod-inversys-spec1": "5.5 kW – 315 kW",
     "prod-inversys-spec2": "Variable Speed (VSD)",
