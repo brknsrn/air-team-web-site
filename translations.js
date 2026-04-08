@@ -160,6 +160,11 @@ const translations = {
     "prod-piston-spec3": "Uzun Ömürlü",
     "prod-piston-spec4": "Tek & Çift Kademeli",
 
+    // Catalog Info Card
+    "prod-info-card-title": "Tüm Ürünlerimiz Henüz Yayında Değil",
+    "prod-info-card-desc": "Web sitemiz şu an geliştirme aşamasındadır ve tüm ürün kataloğumuzu sisteme yüklemeye devam ediyoruz. Sunmuş olduğumuz tüm ürün yelpazesine ve teknik detaylara erişmek için bizimle doğrudan iletişime geçebilir ya da Dalgakıran üzerinden güncel kataloğu inceleyebilirsiniz.",
+    "prod-info-card-btn-external": "Dalgakıran Ürünlerini İncele",
+
     // Aria Labels
     "aria-menu-open": "Mobil menüyü aç",
     "aria-menu-close": "Menüyü kapat",
@@ -327,6 +332,11 @@ const translations = {
     "prod-piston-spec2": "Workshop / SME",
     "prod-piston-spec3": "Long-Lasting",
     "prod-piston-spec4": "Single & Double Stage",
+
+    // Catalog Info Card
+    "prod-info-card-title": "Not All Products Are Listed Yet",
+    "prod-info-card-desc": "Our website is currently under development, and we are still in the process of uploading our entire product catalog. To access our full range of products and technical details, you can contact us directly or examine the current catalog on the Dalgakıran website.",
+    "prod-info-card-btn-external": "Examine Dalgakıran Products",
 
     // Aria Labels
     "aria-menu-open": "Open mobile menu",

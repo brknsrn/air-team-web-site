@@ -416,9 +416,103 @@
     .mobile-nav ul li a.active {
       color: var(--primary) !important;
     }
+
     .main-nav ul li a.active::after {
       transform: scaleX(1) !important;
       opacity: 1 !important;
+    }
+
+    /* Catalog Info Card */
+    .catalog-info-card {
+      background: var(--white);
+      border: 1px dashed var(--primary);
+      border-radius: 8px;
+      padding: 30px;
+      margin-bottom: 30px;
+      display: flex;
+      align-items: center;
+      gap: 30px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .catalog-info-card::before {
+      content: '\f05a';
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      position: absolute;
+      right: -20px;
+      bottom: -20px;
+      font-size: 150px;
+      color: rgba(227, 6, 19, 0.03);
+      z-index: 0;
+    }
+
+    .catalog-info-content {
+      flex: 1;
+      z-index: 1;
+    }
+
+    .catalog-info-content h3 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--dark);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .catalog-info-content h3 i {
+      color: var(--primary);
+      font-size: 1.4rem;
+    }
+
+    .catalog-info-content p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.65;
+      margin-bottom: 0;
+      max-width: 850px;
+    }
+
+    .catalog-info-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 280px;
+      z-index: 1;
+    }
+
+    .catalog-info-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @media (max-width: 991px) {
+      .catalog-info-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+        padding: 24px;
+      }
+      .catalog-info-actions {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .catalog-info-actions .btn {
+        flex: 1;
+        min-width: 200px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .catalog-info-actions .btn {
+        min-width: 100%;
+      }
     }
   </style>
 </head>
@@ -485,7 +579,8 @@
             <span data-i18n="nav-products">Ürünler</span>
           </nav>
           <h1 data-i18n="prod-page-title">Ürün Kataloğu</h1>
-          <p data-i18n="prod-page-desc">Vidalı, pistonlu ve seyyar kompresörlerden geniş basınçlı hava ekipmanlarına kadar her ihtiyaca özel
+          <p data-i18n="prod-page-desc">Vidalı, pistonlu ve seyyar kompresörlerden geniş basınçlı hava ekipmanlarına
+            kadar her ihtiyaca özel
             endüstriyel çözümler.</p>
         </div>
       </div>
@@ -506,15 +601,39 @@
     <!-- Products Main -->
     <section class="products-page">
       <div class="container">
+        <!-- Catalog Info Card -->
+        <div class="catalog-info-card reveal">
+          <div class="catalog-info-content">
+            <h3 data-i18n="prod-info-card-title"><i class="fa-solid fa-circle-info"></i> Tüm Ürünlerimiz Henüz Yayında Değil</h3>
+            <p data-i18n="prod-info-card-desc">Web sitemiz şu an geliştirme aşamasındadır ve tüm ürün kataloğumuzu sisteme yüklemeye devam ediyoruz. Sunmuş olduğumuz tüm ürün yelpazesine ve teknik detaylara erişmek için bizimle doğrudan iletişime geçebilir ya da Dalgakıran üzerinden güncel kataloğu inceleyebilirsiniz.</p>
+          </div>
+          <div class="catalog-info-actions">
+            <a href="https://www.dalgakiran.com/tr/urunler" target="_blank" class="btn btn-primary">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> <span data-i18n="prod-info-card-btn-external">Dalgakıran Ürünlerini İncele</span>
+            </a>
+            <div style="display: flex; gap: 10px;">
+              <a href="tel:02625032526" class="btn btn-outline-dark" style="flex: 1; padding: 13px 15px;">
+                <i class="fa-solid fa-phone"></i>
+              </a>
+              <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark" style="flex: 1; padding: 13px 15px;">
+                <i class="fa-solid fa-envelope"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <!-- Toolbar -->
         <div class="products-toolbar">
-          <p class="products-count"><span id="productCount">6</span> <span data-i18n="prod-count-text">ürün listeleniyor</span></p>
+          <p class="products-count"><span id="productCount">6</span> <span data-i18n="prod-count-text">ürün
+              listeleniyor</span></p>
           <div style="display:flex; align-items:center; gap: 12px;">
             <div class="view-toggle" role="group" aria-label="Görünüm seçimi">
-              <button class="view-btn active" id="viewList" title="Liste görünümü" data-i18n-aria="prod-view-list" aria-pressed="true">
+              <button class="view-btn active" id="viewList" title="Liste görünümü" data-i18n-aria="prod-view-list"
+                aria-pressed="true">
                 <i class="fa-solid fa-list"></i>
               </button>
-              <button class="view-btn" id="viewGrid" title="Grid görünümü" data-i18n-aria="prod-view-grid" aria-pressed="false">
+              <button class="view-btn" id="viewGrid" title="Grid görünümü" data-i18n-aria="prod-view-grid"
+                aria-pressed="false">
                 <i class="fa-solid fa-grip"></i>
               </button>
             </div>
@@ -538,18 +657,25 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
               <h3 data-i18n="prod-title-inversys">INVERSYS PLUS Serisi</h3>
-              <p data-i18n="prod-inversys-desc">Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde <strong>%35'e varan enerji tasarrufu</strong>. Yağ enjekteli vidalı kompresör. 5,5 kW – 315 kW arasındaki tüm gereksinimleri karşılar.</p>
+              <p data-i18n="prod-inversys-desc">Değişken hızlı ve direkt akuple güç aktarım sistemi sayesinde
+                <strong>%35'e varan enerji tasarrufu</strong>. Yağ enjekteli vidalı kompresör. 5,5 kW – 315 kW
+                arasındaki tüm gereksinimleri karşılar.
+              </p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-inversys-spec1">5,5 kW – 315 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="prod-inversys-spec2">Değişken Hızlı (VSD)</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-inversys-spec3">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-leaf"></i> <span data-i18n="prod-inversys-spec4">%35 Enerji Tasarrufu</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-inversys-spec1">5,5 kW –
+                    315 kW</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span
+                    data-i18n="prod-inversys-spec2">Değişken Hızlı (VSD)</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-inversys-spec3">Yağ
+                    Enjekteli</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-leaf"></i> <span data-i18n="prod-inversys-spec4">%35 Enerji
+                    Tasarrufu</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/inversys-plus-serisi/" target="_blank"
+                <!-- <a href="http://www.aircomp.com.tr/urunler/inversys-plus-serisi/" target="_blank"
                   class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -566,17 +692,23 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
               <h3 data-i18n="prod-title-tidy">TIDY Serisi</h3>
-              <p data-i18n="prod-tidy-desc">Basit, güvenilir ve kompakt tasarım. Bakımı kolay ve uzun ömürlü. Yüksek performanslı çalışmaları sayesinde <strong>küçük ve orta ölçekli işletmelerde</strong> güvenle kullanılmaktadır. 2,2 kW – 37 kW arasındaki tüm gereksinimleri karşılar.</p>
+              <p data-i18n="prod-tidy-desc">Basit, güvenilir ve kompakt tasarım. Bakımı kolay ve uzun ömürlü. Yüksek
+                performanslı çalışmaları sayesinde <strong>küçük ve orta ölçekli işletmelerde</strong> güvenle
+                kullanılmaktadır. 2,2 kW – 37 kW arasındaki tüm gereksinimleri karşılar.</p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-tidy-spec1">2,2 kW – 37 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-tidy-spec2">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="prod-tidy-spec3">Kolay Bakım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-building"></i> <span data-i18n="prod-tidy-spec4">KOBİ için İdeal</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-tidy-spec1">2,2 kW – 37
+                    kW</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-tidy-spec2">Yağ
+                    Enjekteli</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span
+                    data-i18n="prod-tidy-spec3">Kolay Bakım</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-building"></i> <span data-i18n="prod-tidy-spec4">KOBİ için
+                    İdeal</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/tidy-serisi/" target="_blank" class="btn btn-primary">
+                <!-- <a href="http://www.aircomp.com.tr/urunler/tidy-serisi/" target="_blank" class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -594,18 +726,24 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
               <h3 data-i18n="prod-title-dvk-direk">DVK Direk Akuple Serisi</h3>
-              <p data-i18n="prod-dvk-direk-desc">Yüksek performans, güvenilirlik ve dayanıklılık sunar. <strong>Direkt akuple güç aktarım sistemi</strong> ile enerji kaybını minimize eder. 22 kW ve 315 kW arasındaki tüm gereksinimleri karşılar.</p>
+              <p data-i18n="prod-dvk-direk-desc">Yüksek performans, güvenilirlik ve dayanıklılık sunar. <strong>Direkt
+                  akuple güç aktarım sistemi</strong> ile enerji kaybını minimize eder. 22 kW ve 315 kW arasındaki tüm
+                gereksinimleri karşılar.</p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-direk-spec1">22 kW – 315 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-link"></i> <span data-i18n="prod-dvk-direk-spec2">Direk Akuple</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-direk-spec3">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="prod-dvk-direk-spec4">Yüksek Dayanıklılık</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-direk-spec1">22 kW –
+                    315 kW</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-link"></i> <span data-i18n="prod-dvk-direk-spec2">Direk
+                    Akuple</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-direk-spec3">Yağ
+                    Enjekteli</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span
+                    data-i18n="prod-dvk-direk-spec4">Yüksek Dayanıklılık</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/dvk-direk-akuple-serisi/" target="_blank"
+                <!-- <a href="http://www.aircomp.com.tr/urunler/dvk-direk-akuple-serisi/" target="_blank"
                   class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -622,17 +760,23 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-vidali">Vidalı Kompresör</p>
               <h3 data-i18n="prod-title-dvk-seri">DVK Serisi</h3>
-              <p data-i18n="prod-dvk-seri-desc">Basit, güvenilir ve sağlam tasarım. Bakımı kolay ve uzun ömürlü. 45 kW – 160 kW arasındaki tüm gereksinimleri karşılar. <strong>Sahada kullanılan on binlerce kompresör</strong> tarafından kanıtlanmış tasarım ve güvenilirlik.</p>
+              <p data-i18n="prod-dvk-seri-desc">Basit, güvenilir ve sağlam tasarım. Bakımı kolay ve uzun ömürlü. 45 kW –
+                160 kW arasındaki tüm gereksinimleri karşılar. <strong>Sahada kullanılan on binlerce kompresör</strong>
+                tarafından kanıtlanmış tasarım ve güvenilirlik.</p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-seri-spec1">45 kW – 160 kW</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-seri-spec2">Yağ Enjekteli</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-star"></i> <span data-i18n="prod-dvk-seri-spec3">Kanıtlanmış Tasarım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span data-i18n="prod-dvk-seri-spec4">Uzun Bakım Aralığı</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-bolt"></i> <span data-i18n="prod-dvk-seri-spec1">45 kW –
+                    160 kW</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-droplet"></i> <span data-i18n="prod-dvk-seri-spec2">Yağ
+                    Enjekteli</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-star"></i> <span
+                    data-i18n="prod-dvk-seri-spec3">Kanıtlanmış Tasarım</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-screwdriver-wrench"></i> <span
+                    data-i18n="prod-dvk-seri-spec4">Uzun Bakım Aralığı</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/dvk-serisi/" target="_blank" class="btn btn-primary">
+                <!-- <a href="http://www.aircomp.com.tr/urunler/dvk-serisi/" target="_blank" class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -675,17 +819,23 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-seyyar">Seyyar Kompresör</p>
               <h3 data-i18n="prod-title-portair">PORTAIR Serisi</h3>
-              <p data-i18n="prod-portair-desc">PORTAIR serisi seyyar kompresörler <strong>inşaat, maden ve gemi onarım sektörleri</strong> için kullanımı ideal kompresörlerdir. Yüksek dayanımlı ve yüksek verimli vida blokları sayesinde uzun bakım aralıkları, yüksek performans ve hava debisi sunar.</p>
+              <p data-i18n="prod-portair-desc">PORTAIR serisi seyyar kompresörler <strong>inşaat, maden ve gemi onarım
+                  sektörleri</strong> için kullanımı ideal kompresörlerdir. Yüksek dayanımlı ve yüksek verimli vida
+                blokları sayesinde uzun bakım aralıkları, yüksek performans ve hava debisi sunar.</p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-truck"></i> <span data-i18n="prod-portair-spec1">Taşınabilir</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-hard-hat"></i> <span data-i18n="prod-portair-spec2">İnşaat / Maden</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-ship"></i> <span data-i18n="prod-portair-spec3">Gemi Onarım</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span data-i18n="prod-portair-spec4">Yüksek Hava Debisi</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-truck"></i> <span
+                    data-i18n="prod-portair-spec1">Taşınabilir</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-hard-hat"></i> <span data-i18n="prod-portair-spec2">İnşaat
+                    / Maden</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-ship"></i> <span data-i18n="prod-portair-spec3">Gemi
+                    Onarım</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-gauge-high"></i> <span
+                    data-i18n="prod-portair-spec4">Yüksek Hava Debisi</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/portair-serisi/" target="_blank" class="btn btn-primary">
+                <!-- <a href="http://www.aircomp.com.tr/urunler/portair-serisi/" target="_blank" class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -711,18 +861,25 @@
             <div class="product-detail-body">
               <p class="product-series-tag" data-i18n="nav-pistonlu">Pistonlu Kompresör</p>
               <h3 data-i18n="prod-title-piston">Tek ve Çift Kademeli Pistonlu Seri</h3>
-              <p data-i18n="prod-piston-desc">Kullanımı kolay, güvenli, uzun ömürlü ve dayanıklı pistonlu kompresörler <strong>küçük işletmeler, atölyeler ve endüstri uygulamaları</strong> için idealdir. 1969 yılından bu yana üretilen bu seri DALGAKIRAN'a duyulan güvenin temelidir.</p>
+              <p data-i18n="prod-piston-desc">Kullanımı kolay, güvenli, uzun ömürlü ve dayanıklı pistonlu kompresörler
+                <strong>küçük işletmeler, atölyeler ve endüstri uygulamaları</strong> için idealdir. 1969 yılından bu
+                yana üretilen bu seri DALGAKIRAN'a duyulan güvenin temelidir.
+              </p>
               <div class="spec-chips">
-                <div class="spec-chip"><i class="fa-solid fa-cog"></i> <span data-i18n="prod-piston-spec1">1969'dan Bu Yana</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-store"></i> <span data-i18n="prod-piston-spec2">Atölye / KOBİ</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span data-i18n="prod-piston-spec3">Uzun Ömürlü</span></div>
-                <div class="spec-chip"><i class="fa-solid fa-layers"></i> <span data-i18n="prod-piston-spec4">Tek & Çift Kademeli</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-cog"></i> <span data-i18n="prod-piston-spec1">1969'dan Bu
+                    Yana</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-store"></i> <span data-i18n="prod-piston-spec2">Atölye /
+                    KOBİ</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-shield-halved"></i> <span
+                    data-i18n="prod-piston-spec3">Uzun Ömürlü</span></div>
+                <div class="spec-chip"><i class="fa-solid fa-layers"></i> <span data-i18n="prod-piston-spec4">Tek & Çift
+                    Kademeli</span></div>
               </div>
               <div class="product-detail-actions">
-                <a href="http://www.aircomp.com.tr/urunler/tek-ve-cift-kademeli-pistonlu-seri/" target="_blank"
+                <!-- <a href="http://www.aircomp.com.tr/urunler/tek-ve-cift-kademeli-pistonlu-seri/" target="_blank"
                   class="btn btn-primary">
                   <i class="fa-solid fa-circle-info"></i> <span data-i18n="btn-examine">Detaylı İncele</span>
-                </a>
+                </a> -->
                 <a href="mailto:info@airteam.com.tr" class="btn btn-outline-dark">
                   <i class="fa-solid fa-envelope"></i> <span data-i18n="btn-quote">Teklif Al</span>
                 </a>
@@ -740,7 +897,8 @@
         <div class="cta-inner">
           <div class="cta-text reveal">
             <h2 data-i18n="cta-title">Projeniz İçin<br>Doğru Çözümü Bulalım</h2>
-            <p data-i18n="cta-desc">Uzman ekibimiz, ihtiyaçlarınıza en uygun kompresör sistemini seçmenize yardımcı olsun.</p>
+            <p data-i18n="cta-desc">Uzman ekibimiz, ihtiyaçlarınıza en uygun kompresör sistemini seçmenize yardımcı
+              olsun.</p>
           </div>
           <div style="display:flex; gap:16px; flex-wrap: wrap;" class="reveal">
             <a href="tel:02625032526" class="btn"
@@ -765,7 +923,8 @@
       <div class="footer-grid">
         <div class="footer-brand">
           <img src="src/logo.png" alt="AirTeam Kompresör" class="logo-img">
-          <p data-i18n="footer-desc">Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına yüksek performanslı
+          <p data-i18n="footer-desc">Dalgakıran Kompresör yetkili bayisi ve servis noktası olarak, sanayi kuruluşlarına
+            yüksek performanslı
             kesintisiz hava çözümleri ile 7/24 orijinal yedek parça ve teknik destek sunuyoruz.</p>
           <div class="social-links" aria-label="Sosyal medya bağlantıları">
             <a href="#" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
@@ -807,7 +966,8 @@
     </div>
   </footer>
 
-  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git" data-i18n="aria-back-to-top" data-i18n-aria="true">
+  <button class="back-to-top" id="backToTop" aria-label="Sayfanın başına git" data-i18n="aria-back-to-top"
+    data-i18n-aria="true">
     <i class="fa-solid fa-arrow-up"></i>
   </button>
 
